@@ -1,0 +1,26 @@
+- crypto_bot
+    - data_collection
+        - exchange_data.py
+        - news_data.py
+        - social_media_data.py
+    - data_analysis
+        - technical_analysis.py
+        - fundamental_analysis.py
+        - sentimental_analysis.py
+    - visualization
+        - candlestick_charts.py
+        - trend_lines.py
+    - machine_learning
+        - neural_network.py
+        - decision_tree.py
+        - regression_model.py
+    - risk_management
+        - stop_loss.py
+        - stop_limit.py
+        - diversification.py
+    - utils
+        - config.py
+        - logger.py
+        - utils.py
+    - main.py
+
