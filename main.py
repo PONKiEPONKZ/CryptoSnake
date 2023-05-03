@@ -43,7 +43,7 @@ def main():
         print()
         logging.info("Program started.")    
        
-76        # Use the ticker selector to select a ticker
+        # Use the ticker selector to select a ticker
         ticker = retrieve_ticker(config)
 
         # Update selected_ticker variable in the config module
