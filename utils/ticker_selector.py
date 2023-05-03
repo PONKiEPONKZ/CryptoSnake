@@ -2,6 +2,7 @@ import requests
 from utils import config
 from .config import selected_ticker
 
+print()
 print("Select a coin from the list:")
 
 def retrieve_ticker(config):
