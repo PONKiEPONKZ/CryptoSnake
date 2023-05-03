@@ -1,0 +1,42 @@
+CryptoSnake
+├── README.md
+├── __init__.py
+├── app.log
+├── data_analysis
+│   ├── __init__.py
+│   ├── fundamental_analysis.py
+│   ├── sentiment_analysis.py
+│   └── technical_analysis.py
+├── data_collection
+│   ├── __init__.py
+│   ├── crypto_data.py
+│   ├── news_data.py
+│   └── social_media_data.py
+├── machine_learning
+│   ├── __init__.py
+│   ├── decision_tree.py
+│   ├── gru_model.py
+│   ├── lstm_model.py
+│   ├── neural_network.py
+│   ├── random_forest_model.py
+│   └── regression_model.py
+├── main.py
+├── requirements.txt
+├── risk_management
+│   ├── __init__.py
+│   ├── diversification.py
+│   ├── stop_limit.py
+│   └── stop_loss.py
+├── tree.txt
+├── utils
+│   ├── __init__.py
+│   ├── config.py
+│   ├── logger.py
+│   ├── ticker_selector.py
+│   └── utils_backup.py
+└── visualization
+    ├── __init__.py
+    ├── candlestick_charts.py
+    └── trend_lines.py
+
+6 directories, 33 files

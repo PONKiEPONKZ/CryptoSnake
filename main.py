@@ -32,6 +32,7 @@ from utils.config import selected_ticker as config_selected_ticker
 from visualization.candlestick_charts import CandlestickCharts
 from visualization.trend_lines import TrendLines
 
+
 def main():
     try:
         # Log start of program
@@ -40,95 +41,109 @@ def main():
         print("** Welcome to CryptoSnake **")
         print()
         print()
-        logging.info("Program started.")    
-       
-76        # Use the ticker selector to select a ticker
+        logging.info("Program started.")
+
+        # Use the ticker selector to select a ticker
         ticker = retrieve_ticker(config)
 
         # Update selected_ticker variable in the config module
         config_selected_ticker = ticker
         logging.info(f"Selected ticker: {config.selected_ticker}")
-        
+
         # Get historical data using the yFinance API
-        logging.info('Collecting crypto data from online resources...')
+        logging.info("Collecting crypto data from online resources...")
         crypto_data = get_crypto_data()
         print("Done.")
         print()
 
-        #Get news articles using the newsdata.io API
-        logging.info('Collecting news articles from online resources...')
+        # Get news articles using the newsdata.io API
+        logging.info("Collecting news articles from online resources...")
         news_data = get_news_data()
         print("Done.")
         print()
 
-        #social_media_data = get_twitter_data()
-        
+        # social_media_data = get_twitter_data()
+
         # Perform data analysis on the collected historical data
-        logging.info('Performing data analysis')        
+        logging.info("Performing data analysis")
         technical_analysis_results = perform_technical_analysis(crypto_data)
         print("Done.")
         print()
-       
-        #Perform sentiment analysis
-        logging.info('Performing sentiment analysis')
+
+        # Perform sentiment analysis
+        logging.info("Performing sentiment analysis")
         sa = SentimentalAnalysis()
-        symbol = config_selected_ticker        
+        symbol = config_selected_ticker
         sentiment_score = sa.get_news_sentiment(symbol, news_data)
-        print("Sentiment score:", sentiment_score) 
-        
+        print("Sentiment score:", sentiment_score)
+
         fundamental_analysis_results = FundamentalAnalysis()
-        
-        #Display technical analysis results        
-        #print()
-        #print("Technical analysis results:")
-        #print()
-        #print(technical_analysis_results)
-        #print()
-        
+
+        # Display technical analysis results
+        # print()
+        # print("Technical analysis results:")
+        # print()
+        # print(technical_analysis_results)
+        # print()
+
         # Visualize collected data
-        logging.info('Visualizing data')
+        logging.info("Visualizing data")
         print("Generating chart...")
-        
+
         candlestick_charts = CandlestickCharts()
-        candlestick_charts.plot_candlestick_chart(crypto_data, technical_analysis_results)
+        candlestick_charts.plot_candlestick_chart(
+            crypto_data, technical_analysis_results
+        )
         trend_lines = TrendLines()
         trend_lines.plot_trend_line(crypto_data)
-        
+
         # Print fundamental analysis results
-        #fundamental_analysis_results.print_results()
+        # fundamental_analysis_results.print_results()
 
-        # Print sentiment analysis results        
+        # Print sentiment analysis results
         # sentiment_analysis_results.print_results()
-        
-        # Train machine learning models
-        logging.info('Training machine learning models')
-        X = crypto_data.drop(['Close'], axis=1).values
-        y = crypto_data['Close'].values
-        
-        # Split the data into training and testing sets
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-        trained_neural_network = NeuralNetwork(input_size=X_train.shape[1], output_size=1)
+        # Train machine learning models
+        logging.info("Training machine learning models")
+        X = crypto_data.drop(["Close"], axis=1).values
+        y = crypto_data["Close"].values
+
+        # Split the data into training and testing sets
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
+
+        trained_neural_network = NeuralNetwork(
+            input_size=X_train.shape[1], output_size=1
+        )
         trained_neural_network.train(X_train, y_train)
 
-        #print()
-        #print(crypto_data)
+        # print()
+        # print(crypto_data)
 
         # Extract the features and labels from the crypto_data
-        crypto_data['Date'] = crypto_data.index.astype(int) // 10**9
-        features = crypto_data[['Date', 'Open', 'High', 'Low', 'Volume']].values
-        close_diff = np.diff(crypto_data['Close'].values)
+        crypto_data["Date"] = crypto_data.index.astype(int) // 10**9
+        features = crypto_data[["Date", "Open", "High", "Low", "Volume"]].values
+        close_diff = np.diff(crypto_data["Close"].values)
         labels = np.concatenate([[0], np.sign(close_diff)])
-        
+
         # Create a dictionary with the features and labels
-        data = {'features': features, 'labels': labels}
-        
+        data = {"features": features, "labels": labels}
+
         # Define your pipeline with the SimpleImputer transformer
-        pipeline = Pipeline([
-            ('imputer', SimpleImputer(strategy='mean')),  # Replace missing values with the mean of each feature
-            ('scaler', StandardScaler()),                 # Scale the features to zero mean and unit variance
-            ('clf', LogisticRegression())                 # Train a logistic regression model
-        ])
+        pipeline = Pipeline(
+            [
+                (
+                    "imputer",
+                    SimpleImputer(strategy="mean"),
+                ),  # Replace missing values with the mean of each feature
+                (
+                    "scaler",
+                    StandardScaler(),
+                ),  # Scale the features to zero mean and unit variance
+                ("clf", LogisticRegression()),  # Train a logistic regression model
+            ]
+        )
 
         # Fit the pipeline to your training data
         pipeline.fit(X_train, y_train)
@@ -142,20 +157,22 @@ def main():
 
         # Test the model
         test_data = get_test_data()
-        test_features = test_data[['Open', 'High', 'Low', 'Volume', 'Date']].values
-        test_labels = np.sign(np.diff(test_data['Close'].values))
-        test_data = {'features': test_features, 'labels': test_labels}
+        test_features = test_data[["Open", "High", "Low", "Volume", "Date"]].values
+        test_labels = np.sign(np.diff(test_data["Close"].values))
+        test_data = {"features": test_features, "labels": test_labels}
         accuracy = test_model(decision_tree, test_data)
 
         print(f"Accuracy: {accuracy:.2f}")
         if accuracy < 0.5:
-            print("Model is not performing well. You may want to try a different model or adjust the hyperparameters.")
+            print(
+                "Model is not performing well. You may want to try a different model or adjust the hyperparameters."
+            )
             sys.exit(1)
 
         trained_regression_model = RegressionModel.train(crypto_data)
 
         # Apply risk management strategies
-        logging.info('Applying risk management strategies')
+        logging.info("Applying risk management strategies")
         stop_loss_order(crypto_data, config.stop_loss_threshold)
         stop_limit_order(crypto_data, config.stop_limit_threshold)
         calculate_portfolio_allocation(crypto_data, config.portfolio_size)
@@ -169,5 +186,6 @@ def main():
         # Exit with a non-zero exit code to indicate that an error occurred
         sys.exit(1)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
