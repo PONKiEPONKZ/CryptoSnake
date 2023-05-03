@@ -1,26 +1,42 @@
-- crypto_bot
-    - data_collection
-        - exchange_data.py
-        - news_data.py
-        - social_media_data.py
-    - data_analysis
-        - technical_analysis.py
-        - fundamental_analysis.py
-        - sentimental_analysis.py
-    - visualization
-        - candlestick_charts.py
-        - trend_lines.py
-    - machine_learning
-        - neural_network.py
-        - decision_tree.py
-        - regression_model.py
-    - risk_management
-        - stop_loss.py
-        - stop_limit.py
-        - diversification.py
-    - utils
-        - config.py
-        - logger.py
-        - utils.py
-    - main.py
+├── App Guidelines.txt
+├── README.md
+├── __init__.py
+├── app.log
+├── data_analysis
+│   ├── __init__.py
+│   ├── fundamental_analysis.py
+│   ├── sentiment_analysis.py
+│   └── technical_analysis.py
+├── data_collection
+│   ├── __init__.py
+│   ├── crypto_data.py
+│   ├── news_data.py
+│   └── social_media_data.py
+├── machine_learning
+│   ├── __init__.py
+│   ├── decision_tree.py
+│   ├── gru_model.py
+│   ├── lstm_model.py
+│   ├── neural_network.py
+│   ├── random_forest_model.py
+│   └── regression_model.py
+├── main.py
+├── requirements.txt
+├── risk_management
+│   ├── __init__.py
+│   ├── diversification.py
+│   ├── stop_limit.py
+│   └── stop_loss.py
+├── utils
+│   ├── __init__.py
+│   ├── app.log
+│   ├── config.py
+│   ├── logger.py
+│   ├── ticker_selector.py
+│   └── utils_backup.py
+└── visualization
+    ├── __init__.py
+    ├── candlestick_charts.py
+    └── trend_lines.py
 
+6 directories, 34 files
