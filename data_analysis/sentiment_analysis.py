@@ -19,6 +19,8 @@ class SentimentalAnalysis:
                 sentiment_score += self.get_sentiment_score(article['description'])
         return sentiment_score
 
+    print("Performing sentiment anaylsis...")
+    
 def main():
     try:
         #Perform sentiment analysis

@@ -2,6 +2,11 @@ import logging
 import sys
 import numpy as np
 import pandas as pd
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import tensorflow as tf
+tf.get_logger().setLevel('ERROR')
+
 
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline

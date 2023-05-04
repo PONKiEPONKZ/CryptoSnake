@@ -3,6 +3,9 @@ import plotly.graph_objs as go
 import sys
 import talib
 
+OVERBOUGHT_LEVEL = 70
+OVERSOLD_LEVEL = 30
+
 def get_sma(df, period):
     return talib.SMA(df['Close'], timeperiod=period)
 
@@ -20,13 +23,13 @@ def get_bollinger_bands(df, period=20, devup=2, devdn=2):
     upper, middle, lower = talib.BBANDS(df['Close'], timeperiod=period, nbdevup=devup, nbdevdn=devdn)
     return upper, middle, lower
 
-print("Performing technical anaylsis...")
-
 def perform_technical_analysis(df):
     if len(df) < 5:
         print('Error: not enough data to perform technical analysis')
         return None
-    
+
+    print("Performing technical anaylsis...")
+
     sma = get_sma(df, 10)
     ema = get_ema(df, 10)
     rsi = get_rsi(df, 14)
