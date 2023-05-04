@@ -14,6 +14,9 @@ class SentimentalAnalysis:
 
     def get_news_sentiment(self):
         # function to get the sentiment score of news related to a given symbol
+        news_data = get_news_data()
+        if news_data is None:
+            return 0
         sentiment_score = 0
         for article in news_data:
             if (
