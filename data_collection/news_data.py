@@ -4,6 +4,7 @@ This module contains the get_news_data function for fetching news articles relat
 
 import requests
 from utils import config
+from utils.config import selected_ticker
 
 def get_news_data():
     api_key = config.api_key
@@ -17,8 +18,7 @@ def get_news_data():
         data = response.json()
         if data['status'] == 'success' and data['totalResults'] > 0:
             return data['results']
-            print("News sentiment data:")
-            print(news_sentiment_data.head(), "\n")
+              
         else:
             print("No news data found.\n")
     else:
