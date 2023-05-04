@@ -1,7 +1,3 @@
-"""
-This module contains the get_news_data function for fetching news articles related to a given query from the News API. It constructs the API URL using the selected_ticker and the API key, and sends a GET request to the API. If the response status code is 200, it parses the response JSON and returns the list of articles. If the status code is not 200, it prints an error message and returns None.
-"""
-
 import requests
 from utils import config
 from utils.config import selected_ticker
@@ -23,3 +19,17 @@ def get_news_data():
             print("No news data found.\n")
     else:
         print("Error fetching news data.\n")
+
+def get_news_sentiment():
+    news_data = get_news_data()
+    
+    if news_data:
+        print("News sentiment data:")
+        for article in news_data:
+            # do sentiment analysis on article['title'] and article['description']
+            # and print the sentiment score
+            print(article['title'])
+            print(article['description'])
+            print("Sentiment score: x\n")
+    else:
+        print("No news data found.\n")
