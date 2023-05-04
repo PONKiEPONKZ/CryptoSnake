@@ -77,8 +77,8 @@ def main():
         #Perform sentiment analysis
         logging.info('Performing sentiment analysis')
         sa = SentimentalAnalysis()
-        sentiment_score = sa.get_news_sentiment()
-        print("Sentiment score:", sentiment_score)
+        sentiment_score = sa.get_news_sentiment(news_data)
+        print(f"Sentiment score: {sentiment_score}")
 
         fundamental_analysis_results = FundamentalAnalysis()
 
