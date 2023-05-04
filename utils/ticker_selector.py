@@ -1,3 +1,4 @@
+import logging
 import requests
 from utils import config
 from .config import selected_ticker
@@ -53,6 +54,8 @@ def retrieve_ticker(config):
 
     # Set the chosen ticker symbol
     selected_ticker_value = ticker_list[choice-1] + "-USD"
-    config.selected_ticker = selected_ticker_value
-
-    return selected_ticker_value
+    
+    # Set the selected ticker in config
+    config.set_selected_ticker(selected_ticker_value)
+    logging.info(f"Selected ticker: {config.selected_ticker}")
+    

@@ -1,8 +1,8 @@
 from utils import config
+from utils.config import selected_ticker
 from bs4 import BeautifulSoup
 import requests
 
-selected_ticker = config.selected_ticker
 
 # Scraping Twitter data
 def get_twitter_data():

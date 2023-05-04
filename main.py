@@ -50,11 +50,7 @@ def main():
        
         # Use the ticker selector to select a ticker
         ticker = retrieve_ticker(config)
-
-        # Update selected_ticker variable in the config module
-        config_selected_ticker = ticker
-        logging.info(f"Selected ticker: {config.selected_ticker}")
-        
+                
         # Set the display format
         pd.options.display.float_format = '{:.10f}'.format
 
@@ -79,25 +75,13 @@ def main():
         print("Done.")
         print()
        
-        # set display options to show all rows and columns
-        #pd.set_option("display.max_rows", None)
-        #pd.set_option("display.max_columns", None)
-        
         #Perform sentiment analysis
         logging.info('Performing sentiment analysis')
         sa = SentimentalAnalysis()
-        symbol = config_selected_ticker
-        sentiment_score = sa.get_news_sentiment(symbol, news_data)
+        sentiment_score = sa.get_news_sentiment()
         print("Sentiment score:", sentiment_score)
 
         fundamental_analysis_results = FundamentalAnalysis()
-
-        # Display technical analysis results
-        # print()
-        # print("Technical analysis results:")
-        # print()
-        # print(technical_analysis_results)
-        # print()
 
         # Visualize collected data
         logging.info("Visualizing data")
@@ -107,13 +91,7 @@ def main():
         candlestick_charts.plot_candlestick_chart(crypto_data, technical_analysis_results)
         trend_lines = TrendLines()
         trend_lines.plot_trend_line(crypto_data)
-
-        # Print fundamental analysis results
-        # fundamental_analysis_results.print_results()
-
-        # Print sentiment analysis results
-        # sentiment_analysis_results.print_results()
-
+        
         # Train machine learning models
         logging.info('Training machine learning models')
         X = crypto_data.drop(['Close'], axis=1).values
@@ -124,9 +102,6 @@ def main():
 
         trained_neural_network = NeuralNetwork(input_size=X_train.shape[1], output_size=1)
         trained_neural_network.train(X_train, y_train)
-
-        # print()
-        # print(crypto_data)
 
         # Extract the features and labels from the crypto_data
         crypto_data['Date'] = crypto_data.index.astype(int) // 10**9

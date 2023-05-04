@@ -7,7 +7,12 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 log_file = os.path.join(ROOT_DIR, 'app.log')
 
 # API keys and other configurations
-selected_ticker = ""
+# API keys and other configurations
+def set_selected_ticker(value):
+    global selected_ticker
+    selected_ticker = value
+
+selected_ticker = None
 api_key = 'pub_2112721cdad7223a39b4dea7d16f609f1b639'
 api_secret = ''
 base_url = ''

@@ -7,11 +7,10 @@ from utils import config
 
 def get_news_data():
     api_key = config.api_key
-    selected_ticker = config.selected_ticker
+    
+    print("Retrieving news articles for " + config.selected_ticker + "...")
 
-    print("Retrieving news articles for " + selected_ticker + "...")
-
-    url = f"https://newsdata.io/api/1/news?apikey={api_key}&q={selected_ticker}"
+    url = f"https://newsdata.io/api/1/news?apikey={api_key}&q={config.selected_ticker}"
     response = requests.get(url)
 
     if response.status_code == 200:
