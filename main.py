@@ -54,13 +54,17 @@ def main():
         # Update selected_ticker variable in the config module
         config_selected_ticker = ticker
         logging.info(f"Selected ticker: {config.selected_ticker}")
+        
+        # Set the display format
+        pd.options.display.float_format = '{:.10f}'.format
 
         # Get historical data using the yFinance API
         logging.info("Collecting crypto data from online resources...")
         crypto_data = get_crypto_data()
         print("Done.")
         print()
-
+        null_locations = crypto_data.isnull()
+        
         #Get news articles using the newsdata.io API
         logging.info('Collecting news articles from online resources...')
         news_data = get_news_data()
@@ -75,6 +79,10 @@ def main():
         print("Done.")
         print()
        
+        # set display options to show all rows and columns
+        #pd.set_option("display.max_rows", None)
+        #pd.set_option("display.max_columns", None)
+        
         #Perform sentiment analysis
         logging.info('Performing sentiment analysis')
         sa = SentimentalAnalysis()

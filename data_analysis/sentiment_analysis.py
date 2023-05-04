@@ -19,11 +19,11 @@ class SentimentalAnalysis:
                 sentiment_score += self.get_sentiment_score(article['description'])
         return sentiment_score
 
-    print("Performing sentiment anaylsis...")
     
 def main():
     try:
         #Perform sentiment analysis
+        print("Performing sentiment anaylsis...")
         logging.info('Performing sentiment analysis')
         sa = SentimentalAnalysis()
         symbol = 'BTC' # just for testing purposes

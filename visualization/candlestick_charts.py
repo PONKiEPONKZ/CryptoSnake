@@ -85,7 +85,7 @@ class CandlestickCharts:
         )
 
         # Add MACD chart to bottom subplot
-        print(technical_analysis_results.keys())
+        print(technical_analysis_results)
         fig.add_trace(
             go.Scatter(
                 x=df.index,
