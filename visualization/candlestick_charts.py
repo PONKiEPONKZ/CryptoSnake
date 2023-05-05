@@ -13,7 +13,7 @@ class CandlestickCharts:
     def __init__(self):
         pass
 
-    def plot_candlestick_chart(self, df, technical_analysis_results):
+    def plot_candlestick_chart(self, crypto_data, technical_analysis_results):
         if technical_analysis_results is None:
             print("Error: technical analysis not available")
             return
@@ -25,11 +25,11 @@ class CandlestickCharts:
         # Add candlestick chart to top subplot
         fig.add_trace(
             go.Candlestick(
-                x=df.index,
-                open=df["Open"],
-                high=df["High"],
-                low=df["Low"],
-                close=df["Close"],
+                x=crypto_data.index,
+                open=crypto_data["Open"],
+                high=crypto_data["High"],
+                low=crypto_data["Low"],
+                close=crypto_data["Close"],
                 name="Price",
                 increasing_line_color='green',
                 decreasing_line_color='red',
@@ -40,13 +40,13 @@ class CandlestickCharts:
 
         # Add moving averages to top subplot
         fig.add_trace(
-            go.Scatter(x=df.index, y=technical_analysis_results["SMA"], name="SMA", 
+            go.Scatter(x=crypto_data.index, y=technical_analysis_results["SMA"], name="SMA", 
                        line=dict(color='blue')),
             row=1,
             col=1,
         )
         fig.add_trace(
-            go.Scatter(x=df.index, y=technical_analysis_results["EMA"], name="EMA",
+            go.Scatter(x=crypto_data.index, y=technical_analysis_results["EMA"], name="EMA",
                        line=dict(color='orange')),
             row=1,
             col=1,
@@ -55,7 +55,7 @@ class CandlestickCharts:
         # Add Bollinger Bands chart to top subplot
         fig.add_trace(
             go.Scatter(
-                x=df.index,
+                x=crypto_data.index,
                 y=technical_analysis_results["Upper"],
                 name="Upper Bollinger Band",
                 line={"color": "red"},
@@ -65,7 +65,7 @@ class CandlestickCharts:
         )
         fig.add_trace(
             go.Scatter(
-                x=df.index,
+                x=crypto_data.index,
                 y=technical_analysis_results["Middle"],
                 name="Middle Bollinger Band",
                 line={"color": "blue"},
@@ -75,7 +75,7 @@ class CandlestickCharts:
         )
         fig.add_trace(
             go.Scatter(
-                x=df.index,
+                x=crypto_data.index,
                 y=technical_analysis_results["Lower"],
                 name="Lower Bollinger Band",
                 line={"color": "green"},
@@ -84,11 +84,10 @@ class CandlestickCharts:
             col=1,
         )
 
-        # Add MACD chart to bottom subplot
-        print(technical_analysis_results)
+        # Add MACD chart to bottom subplot        
         fig.add_trace(
             go.Scatter(
-                x=df.index,
+                x=crypto_data.index,
                 y=technical_analysis_results["MACD"],
                 name="MACD",
                 line={"color": "blue"},
@@ -98,7 +97,7 @@ class CandlestickCharts:
         )
         fig.add_trace(
             go.Scatter(
-                x=df.index,
+                x=crypto_data.index,
                 y=technical_analysis_results["Signal"],
                 name="Signal",
                 line={"color": "red"},
@@ -108,7 +107,7 @@ class CandlestickCharts:
         )
         fig.add_trace(
             go.Bar(
-                x=df.index,
+                x=crypto_data.index,
                 y=technical_analysis_results["Hist"],
                 name="MACD Histogram",
                 marker={"color": "grey"},
@@ -120,7 +119,7 @@ class CandlestickCharts:
         # Add RSI chart to bottom subplot
         fig.add_trace(
             go.Scatter(
-                x=df.index,
+                x=crypto_data.index,
                 y=technical_analysis_results["RSI"],
                 name="RSI",
                 line={"color": "purple"},
@@ -132,8 +131,8 @@ class CandlestickCharts:
         #Add horizontal line for overbought and oversold levels on RSI chart
         fig.add_shape(
             type="line",
-            x0=df.index[0],
-            x1=df.index[-1],
+            x0=crypto_data.index[0],
+            x1=crypto_data.index[-1],
             y0=technical_analysis.OVERBOUGHT_LEVEL,
             y1=technical_analysis.OVERBOUGHT_LEVEL,
             line=dict(color="red", width=1, dash="dashdot"),
@@ -142,8 +141,8 @@ class CandlestickCharts:
         )
         fig.add_shape(
             type="line",
-            x0=df.index[0],
-            x1=df.index[-1],
+            x0=crypto_data.index[0],
+            x1=crypto_data.index[-1],
             y0=technical_analysis.OVERSOLD_LEVEL,
             y1=technical_analysis.OVERSOLD_LEVEL,
             line=dict(color="green", width=1, dash="dashdot"),
@@ -163,3 +162,6 @@ class CandlestickCharts:
 
         # Display chart
         fig.show()
+        
+        return fig
+       
