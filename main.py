@@ -1,6 +1,8 @@
 import logging
 import sys
 import numpy as np
+import plotly.graph_objs as go
+
 import os
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
@@ -109,11 +111,25 @@ def main():
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=42
         )
-
-        trained_neural_network = NeuralNetwork(
+        
+        #Train the neural network model
+        trained_neural_network_model = NeuralNetwork(
             input_size=X_train.shape[1], output_size=1
         )
-        trained_neural_network.train(X_train, y_train)
+        trained_neural_network_model.train(X_train, y_train)
+        
+        # Predict on the trained neural network test data
+        y_pred = trained_neural_network_model.predict(X_test)
+        
+        # Create a new trace for the predicted values
+        trace_pred = go.Scatter(x=X_test.index, y=y_pred.flatten(), name='Predicted')
+
+        # Add the new trace to the existing fig object
+        fig.add_trace(trace_pred)
+        
+        # Update the figure layout and show the chart
+        fig.update_layout(title='My Chart with Predicted Values')
+        fig.show()
 
         # Extract the features and labels from the crypto_data
         crypto_data["Date"] = crypto_data.index.astype(int) // 10**9

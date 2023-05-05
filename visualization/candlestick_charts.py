@@ -5,18 +5,21 @@ from data_analysis import technical_analysis
 from data_analysis.technical_analysis import OVERBOUGHT_LEVEL, OVERSOLD_LEVEL
 
 from utils import config
-
-selected_ticker = config.selected_ticker
+from utils.config import selected_ticker
 
 
 class CandlestickCharts:
     def __init__(self):
         pass
-
+    
     def plot_candlestick_chart(self, crypto_data, technical_analysis_results):
         if technical_analysis_results is None:
             print("Error: technical analysis not available")
             return
+
+        # Define start and end dates for range slider
+        start_date = crypto_data.index[0]
+        end_date = crypto_data.index[-1]
 
         # Create subplots with shared x-axis
         fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.05, 
@@ -30,138 +33,155 @@ class CandlestickCharts:
                 high=crypto_data["High"],
                 low=crypto_data["Low"],
                 close=crypto_data["Close"],
-                name="Price",
-                increasing_line_color='green',
-                decreasing_line_color='red',
+                name=config.selected_ticker.upper()
             ),
             row=1,
-            col=1,
+            col=1
         )
 
-        # Add moving averages to top subplot
+        # Add technical analysis indicators to top subplot
         fig.add_trace(
-            go.Scatter(x=crypto_data.index, y=technical_analysis_results["SMA"], name="SMA", 
-                       line=dict(color='blue')),
+            go.Scatter(
+                x=crypto_data.index,
+                y=technical_analysis_results["EMA20"],
+                name="EMA20",
+                line=dict(width=1)
+            ),
             row=1,
-            col=1,
+            col=1
         )
+        
         fig.add_trace(
-            go.Scatter(x=crypto_data.index, y=technical_analysis_results["EMA"], name="EMA",
-                       line=dict(color='orange')),
+            go.Scatter(
+                x=crypto_data.index,
+                y=technical_analysis_results["EMA50"],
+                name="EMA50",
+                line=dict(width=1)
+            ),
             row=1,
-            col=1,
-        )
-
-        # Add Bollinger Bands chart to top subplot
+            col=1
+                )
         fig.add_trace(
             go.Scatter(
                 x=crypto_data.index,
                 y=technical_analysis_results["Upper"],
-                name="Upper Bollinger Band",
-                line={"color": "red"},
+                name="Upper Band",
+                line=dict(width=1)
             ),
             row=1,
-            col=1,
+            col=1
         )
+
         fig.add_trace(
             go.Scatter(
                 x=crypto_data.index,
                 y=technical_analysis_results["Middle"],
-                name="Middle Bollinger Band",
-                line={"color": "blue"},
+                name="Middle Band",
+                line=dict(width=1)
             ),
             row=1,
-            col=1,
+            col=1
         )
+
         fig.add_trace(
             go.Scatter(
                 x=crypto_data.index,
                 y=technical_analysis_results["Lower"],
-                name="Lower Bollinger Band",
-                line={"color": "green"},
+                name="Lower Band",
+                line=dict(width=1)
             ),
             row=1,
-            col=1,
+            col=1
         )
-
-        # Add MACD chart to bottom subplot        
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["MACD"],
-                name="MACD",
-                line={"color": "blue"},
-            ),
-            row=2,
-            col=1,
-        )
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["Signal"],
-                name="Signal",
-                line={"color": "red"},
-            ),
-            row=2,
-            col=1,
-        )
+        
+        # Add MACD histogram to bottom subplot
         fig.add_trace(
             go.Bar(
                 x=crypto_data.index,
-                y=technical_analysis_results["Hist"],
-                name="MACD Histogram",
-                marker={"color": "grey"},
+                y=technical_analysis_results["MACD"],
+                name="MACD Histogram"
+            ),
+            row=1,
+            col=1
+        )
+        
+        # Add volume chart to bottom subplot
+        fig.add_trace(
+            go.Bar(
+                x=crypto_data.index,
+                y=crypto_data["Volume"],
+                name="Volume"
             ),
             row=2,
-            col=1,
+            col=1
         )
-
-        # Add RSI chart to bottom subplot
+               
+        fig.add_trace(
+            go.Scatter(
+                x=crypto_data.index,
+                y=[OVERBOUGHT_LEVEL] * len(crypto_data),
+                name="Overbought",
+                line=dict(color="red", width=1, dash="dash")
+            ),
+            row=2,
+            col=1
+        )
+        
+        fig.add_trace(
+            go.Scatter(
+                x=crypto_data.index,
+                y=[OVERSOLD_LEVEL] * len(crypto_data),
+                name="Oversold",
+                line=dict(color="green", width=1, dash="dash")
+            ),
+            row=2,
+            col=1
+        )
+        
         fig.add_trace(
             go.Scatter(
                 x=crypto_data.index,
                 y=technical_analysis_results["RSI"],
                 name="RSI",
-                line={"color": "purple"},
+                line=dict(width=1)
             ),
             row=2,
-            col=1,
+            col=1
         )
         
-        #Add horizontal line for overbought and oversold levels on RSI chart
-        fig.add_shape(
-            type="line",
-            x0=crypto_data.index[0],
-            x1=crypto_data.index[-1],
-            y0=technical_analysis.OVERBOUGHT_LEVEL,
-            y1=technical_analysis.OVERBOUGHT_LEVEL,
-            line=dict(color="red", width=1, dash="dashdot"),
-            row=2,
-            col=1,
-        )
-        fig.add_shape(
-            type="line",
-            x0=crypto_data.index[0],
-            x1=crypto_data.index[-1],
-            y0=technical_analysis.OVERSOLD_LEVEL,
-            y1=technical_analysis.OVERSOLD_LEVEL,
-            line=dict(color="green", width=1, dash="dashdot"),
-            row=2,
-            col=1,
-        )
-
-        # Update layout settings
+        fig.update_yaxes(range=[0, 100], row=2, col=1)
+        
+        # Add range slider to bottom subplot
         fig.update_layout(
-            title=f"{selected_ticker} Stock Analysis",
+            xaxis=dict(
+                rangeselector=dict(
+                    buttons=list([
+                        dict(count=1, label="1D", step="day", stepmode="backward"),
+                        dict(count=7, label="1W", step="day", stepmode="backward"),
+                        dict(count=1, label="1M", step="month", stepmode="backward"),
+                        dict   (count=6, label="6M", step="month", stepmode="backward"),
+                        dict(count=1, label="YTD", step="year", stepmode="todate"),
+                        dict(count=1, label="1Y", step="year", stepmode="backward"),
+                        dict(step="all")
+                    ])
+                ),
+                color = "grey",
+                rangeslider=dict(
+                    visible=False
+                ),
+                type="date"
+            )
+        )
+        # Update layout
+        fig.update_layout(
+            title=f"{config.selected_ticker.upper()} Candlestick Chart",
             template="plotly_dark",
             xaxis_rangeslider_visible=False,
-            xaxis=dict(type="category"),
-            height=800,
             hovermode="x unified",
+            height=config.PLOT_HEIGHT,
+            yaxis=dict(title="Price", tickformat=".8f"), # format y-axis as currency
+            yaxis2=dict(title="Volume"),
         )
 
-        # Display chart
+        # Show plot
         fig.show()
-        
-        return fig
-       
