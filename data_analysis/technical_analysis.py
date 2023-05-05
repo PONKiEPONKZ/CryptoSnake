@@ -31,7 +31,11 @@ def perform_technical_analysis(df):
     print("Performing technical anaylsis...")
 
     sma = get_sma(df, 10)
+    sma20 = get_sma(df, 20)
+    sma50 = get_sma(df, 50)
     ema = get_ema(df, 10)
+    ema20 = get_ema(df, 20)
+    ema50 = get_ema(df, 50)
     rsi = get_rsi(df, 14)
     macd, signal, hist = get_macd(df)
     upper, middle, lower = get_bollinger_bands(df)
@@ -42,7 +46,11 @@ def perform_technical_analysis(df):
     
     technical_analysis_results = {
         'SMA': sma,
+        'SMA20': sma,
+        'SMA50': sma,
         'EMA': ema,
+        'EMA20': ema20,
+        'EMA50': ema50,
         'RSI': rsi,
         'MACD': macd,
         'Signal': signal,
