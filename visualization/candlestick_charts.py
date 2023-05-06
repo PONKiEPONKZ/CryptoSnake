@@ -33,78 +33,39 @@ class CandlestickCharts:
                 high=crypto_data["High"],
                 low=crypto_data["Low"],
                 close=crypto_data["Close"],
-                name=config.selected_ticker.upper()
+                name="Price",
             ),
             row=1,
             col=1
         )
 
-        # Add technical analysis indicators to top subplot
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["EMA20"],
-                name="EMA20",
-                line=dict(width=1)
-            ),
-            row=1,
-            col=1
-        )
-        
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["EMA50"],
-                name="EMA50",
-                line=dict(width=1)
-            ),
-            row=1,
-            col=1
+        # Add technical analysis indicators to top or bottom subplot
+        for key, value in technical_analysis_results.items():
+            if key in ['SMA', 'SMA20', 'SMA50', 'EMA', 'EMA20', 'EMA50', 'Upper', 'Middle', 'Lower']:
+                # Add to top subplot
+                fig.add_trace(
+                    go.Scatter(
+                        x=crypto_data.index,
+                        y=value,
+                        name=key,
+                        line=dict(width=1)
+                    ),
+                    row=1,
+                    col=1
                 )
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["Upper"],
-                name="Upper Band",
-                line=dict(width=1)
-            ),
-            row=1,
-            col=1
-        )
+            elif key in ['RSI', 'MACD', 'Signal', 'Hist']:
+                # Add to bottom subplot
+                fig.add_trace(
+                    go.Scatter(
+                        x=crypto_data.index,
+                        y=value,
+                        name=key,
+                        line=dict(width=1)
+                    ),
+                    row=2,
+                    col=1
+                )
 
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["Middle"],
-                name="Middle Band",
-                line=dict(width=1)
-            ),
-            row=1,
-            col=1
-        )
-
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["Lower"],
-                name="Lower Band",
-                line=dict(width=1)
-            ),
-            row=1,
-            col=1
-        )
-        
-        # Add MACD histogram to bottom subplot
-        fig.add_trace(
-            go.Bar(
-                x=crypto_data.index,
-                y=technical_analysis_results["MACD"],
-                name="MACD Histogram"
-            ),
-            row=1,
-            col=1
-        )
-        
         # Add volume chart to bottom subplot
         fig.add_trace(
             go.Bar(
@@ -138,18 +99,7 @@ class CandlestickCharts:
             col=1
         )
         
-        fig.add_trace(
-            go.Scatter(
-                x=crypto_data.index,
-                y=technical_analysis_results["RSI"],
-                name="RSI",
-                line=dict(width=1)
-            ),
-            row=2,
-            col=1
-        )
-        
-        fig.update_yaxes(range=[0, 100], row=2, col=1)
+        fig.update_yaxes(range=[0, 100], row=2, col=1)        
         
         # Add range slider to bottom subplot
         fig.update_layout(

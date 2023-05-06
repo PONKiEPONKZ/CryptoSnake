@@ -1,12 +1,11 @@
-import matplotlib.pyplot as plt
-import numpy as np
-
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 class TrendLines:
     def __init__(self):
         pass
 
-    def plot_trend_line(self, crypto_data, fig=None, ax=None):
+    def plot_trend_lines(self, crypto_data, candlestick_data, fig=None, ax=None):
         # extract closing prices from the crypto data
         close_prices = crypto_data["Close"]
         # create x and y arrays for linear regression
@@ -21,13 +20,8 @@ class TrendLines:
         # plot the data and trend line
         if ax is None:
             fig, ax = plt.subplots()
-            ax = [ax]
-        ax[0].plot(x, y, label="Data")
-        ax[0].plot(x, trendline, "--", label="Trend line")
-        ax[0].legend()
-        if fig is None:
-            plt.show()
-        else:
-            fig.canvas.draw()
+        ax.plot(candlestick_data.index, candlestick_data["Close"], label="Data")
+        ax.plot(crypto_data.index, trendline, "--", label="Trend line")
+        ax.legend()
 
-        return fig
+        return fig, ax

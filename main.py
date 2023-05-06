@@ -95,38 +95,39 @@ def main():
         logging.info("Visualizing data")
         print("Generating chart...")
 
+        crypto_data_df = pd.DataFrame(data=crypto_data, columns=["Open", "High", "Low", "Close", "Volume"])
         candlestick_charts = CandlestickCharts()
         fig = candlestick_charts.plot_candlestick_chart(
-        crypto_data, technical_analysis_results
+            crypto_data_df, technical_analysis_results
         )
         trend_lines = TrendLines()
-        fig = trend_lines.plot_trend_line(crypto_data, fig)
+        fig, ax = trend_lines.plot_trend_lines(crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
 
         # Train machine learning models
         logging.info("Training machine learning models")
-        X = crypto_data.drop(["Close"], axis=1).values
-        y = crypto_data["Close"].values
+        X = crypto_data_df.drop(["Close"], axis=1)
+        y = crypto_data_df["Close"]
 
         # Split the data into training and testing sets
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=42
         )
-        
-        #Train the neural network model
+
+        # Train the neural network model
         trained_neural_network_model = NeuralNetwork(
             input_size=X_train.shape[1], output_size=1
         )
         trained_neural_network_model.train(X_train, y_train)
-        
+
         # Predict on the trained neural network test data
         y_pred = trained_neural_network_model.predict(X_test)
-        
+
         # Create a new trace for the predicted values
         trace_pred = go.Scatter(x=X_test.index, y=y_pred.flatten(), name='Predicted')
 
         # Add the new trace to the existing fig object
         fig.add_trace(trace_pred)
-        
+
         # Update the figure layout and show the chart
         fig.update_layout(title='My Chart with Predicted Values')
         fig.show()
@@ -199,3 +200,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
