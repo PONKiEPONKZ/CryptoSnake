@@ -1,12 +1,12 @@
+import os
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from PIL import Image
 
 from data_analysis import technical_analysis
 from data_analysis.technical_analysis import OVERBOUGHT_LEVEL, OVERSOLD_LEVEL
-
 from utils import config
-from utils.config import selected_ticker
-
+from utils.config import selected_ticker, selected_ticker_image_url
 
 class CandlestickCharts:
     def __init__(self):
@@ -122,15 +122,30 @@ class CandlestickCharts:
                 type="date"
             )
         )
-        # Update layout
+        
+        # Get the absolute path of the image file
+        image_path = os.path.join(os.getcwd(), "utils", "images", "selected_ticker_image.png")
+
+        # Add image
         fig.update_layout(
-            title=f"{config.selected_ticker.upper()} Candlestick Chart",
+            images=[dict(
+                source=image_path,
+                xref="paper", yref="paper",
+                x=0, y=1.05,
+                sizex=0.05, sizey=0.05,
+                xanchor="left", yanchor="bottom"
+            )],
+            title={
+                'text': f"{config.selected_ticker.upper()} Candlestick Chart",
+                'x':0.15, # adjust x position of title to avoid overlap with image
+                'xanchor': 'left' # set x anchor to left to align with image
+            },
             template="plotly_dark",
             xaxis_rangeslider_visible=False,
             hovermode="x unified",
             height=config.PLOT_HEIGHT,
-            yaxis=dict(title="Price", tickformat=".8f"), # format y-axis as currency
-            yaxis2=dict(title="Volume"),
+            yaxis=dict(title="Price", tickformat=".8f"),
+            yaxis2=dict(title="Volume")
         )
 
         # Show plot

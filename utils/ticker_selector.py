@@ -1,7 +1,10 @@
 import logging
 import requests
+import os
+from PIL import Image
+from io import BytesIO
 from utils import config
-from .config import selected_ticker
+from .config import selected_ticker, selected_ticker_image_url
 
 print()
 print("Select a coin from the list:")
@@ -23,6 +26,7 @@ def retrieve_ticker(config):
 
     data = response.json()
     ticker_list = [coin["symbol"].upper() for coin in data]
+    image_list = [coin["image"] for coin in data]
 
     # Split the ticker list into 5 columns with 10 elements each
     num_cols = 5
@@ -54,8 +58,21 @@ def retrieve_ticker(config):
 
     # Set the chosen ticker symbol
     selected_ticker_value = ticker_list[choice-1] + "-USD"
-    
+    selected_ticker_image_url_value = image_list[choice-1].split('?')[0]
+
+    # Define the path where the image will be saved
+    image_path = "utils/images/selected_ticker_image.png"
+
+    # Create the directory if it doesn't exist
+    os.makedirs(os.path.dirname(image_path), exist_ok=True)
+
+    # Download and store the selected ticker image locally
+    response = requests.get(selected_ticker_image_url_value)
+    img = Image.open(BytesIO(response.content))
+    img.save(image_path)
+
     # Set the selected ticker in config
     config.set_selected_ticker(selected_ticker_value)
+    config.set_selected_ticker_image_url("selected_ticker_image.png")
     logging.info(f"Selected ticker: {config.selected_ticker}")
-    
+    logging.info(f"Selected ticker image URL: {config.selected_ticker_image_url}")

@@ -61,6 +61,9 @@ def main():
 
         # Use the ticker selector to select a ticker
         ticker = retrieve_ticker(config)
+        
+        print(config.selected_ticker_image_url)
+        print(config.selected_ticker)
 
         # Get historical data using the yFinance API
         logging.info("Collecting crypto data from online resources...")
