@@ -44,6 +44,7 @@ from risk_management.diversification import calculate_portfolio_allocation
 from utils import config
 from utils.config import api_key, api_secret, base_url, log_file
 from utils.ticker_selector import retrieve_ticker
+from utils.config import show_loading_animation
 from utils.config import selected_ticker as config_selected_ticker
 from visualization.candlestick_charts import CandlestickCharts
 from visualization.trend_lines import TrendLines
@@ -59,7 +60,7 @@ def main():
         print()
         logging.info("Program started.")
 
-        # Use the ticker selector to select a ticker
+        # Use the selector to select a ticker and store it's logo
         ticker = retrieve_ticker(config)
         
         print(config.selected_ticker_image_url)
@@ -67,30 +68,30 @@ def main():
 
         # Get historical data using the yFinance API
         logging.info("Collecting crypto data from online resources...")
+        show_loading_animation()
         crypto_data = get_crypto_data()
         print("Done.")
         print()
         null_locations = crypto_data.isnull()
-
-        # Get news articles using the newsdata.io API
-        logging.info("Collecting news articles from online resources...")
-        news_data = get_news_data()
-        print("Done.")
-        print()
-
-        # social_media_data = get_twitter_data()
-
+        
         # Perform data analysis on the collected historical data
         logging.info("Performing data analysis")
         technical_analysis_results = perform_technical_analysis(crypto_data)
         print("Done.")
         print()
-
+        
+        # Get news articles using the newsdata.io API
+        logging.info("Collecting news articles from online resources...")
+        news_data = get_news_data()
+        print("Done.")
+        print()
+        
         # Perform sentiment analysis
         logging.info("Performing sentiment analysis")
         sa = SentimentalAnalysis()
         sentiment_score = sa.get_news_sentiment(news_data)
         print("Sentiment score:", sentiment_score)
+        # social_media_data = get_twitter_data()
 
         fundamental_analysis_results = FundamentalAnalysis()
 
@@ -106,7 +107,7 @@ def main():
         trend_lines = TrendLines()
         fig, ax = trend_lines.plot_trend_lines(crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
 
-        # Train machine learning models
+        # Prepare data for machine learning
         logging.info("Training machine learning models")
         X = crypto_data_df.drop(["Close"], axis=1)
         y = crypto_data_df["Close"]
