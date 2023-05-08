@@ -132,7 +132,7 @@ class CandlestickCharts:
                 source=image_path,
                 xref="paper", yref="paper",
                 x=0, y=1.05,
-                sizex=0.05, sizey=0.05,
+                sizex=0.15, sizey=0.15,
                 xanchor="left", yanchor="bottom"
             )],
             title={
@@ -150,3 +150,4 @@ class CandlestickCharts:
 
         # Show plot
         fig.show()
+        return fig

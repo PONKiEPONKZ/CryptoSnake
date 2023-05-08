@@ -1,10 +1,12 @@
-import logging
 import requests
 import os
 from PIL import Image
 from io import BytesIO
 from utils import config
+from utils.logger import Logger
 from .config import selected_ticker, selected_ticker_image_url
+
+logger = Logger()
 
 print()
 print("Select a coin from the list:")
@@ -71,8 +73,8 @@ def retrieve_ticker(config):
     img = Image.open(BytesIO(response.content))
     img.save(image_path)
 
-    # Set the selected ticker in config
+    # Set the selected ticker and image url in config
     config.set_selected_ticker(selected_ticker_value)
     config.set_selected_ticker_image_url("selected_ticker_image.png")
-    logging.info(f"Selected ticker: {config.selected_ticker}")
-    logging.info(f"Selected ticker image URL: {config.selected_ticker_image_url}")
+    logger.log_info(f"Selected ticker: {config.selected_ticker}")
+    logger.log_info(f"Selected ticker image URL: {config.selected_ticker_image_url}")

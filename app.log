@@ -1,0 +1,64 @@
+2023-05-08 18:18:15,690 - INFO - Program started
+2023-05-08 18:19:44,714 - INFO - Selected ticker: SHIB-USD
+2023-05-08 18:19:44,714 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 18:19:44,716 - INFO - Collecting crypto data from online resources...
+2023-05-08 18:19:44,717 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 18:19:44,718 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 18:19:44,918 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 18:19:44,920 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 18:19:44,921 - INFO - Performing data analysis
+2023-05-08 18:19:44,925 - INFO - Collecting news articles from online resources...
+2023-05-08 18:19:45,738 - INFO - Performing sentiment analysis
+2023-05-08 18:19:45,927 - INFO - Visualizing data
+2023-05-08 18:23:03,754 - INFO - Program started
+2023-05-08 18:23:07,083 - INFO - Selected ticker: SHIB-USD
+2023-05-08 18:23:07,083 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 18:23:07,084 - INFO - Collecting crypto data from online resources...
+2023-05-08 18:23:07,086 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 18:23:07,087 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 18:23:07,276 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 18:23:07,279 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 18:23:07,279 - INFO - Performing data analysis
+2023-05-08 18:23:07,283 - INFO - Collecting news articles from online resources...
+2023-05-08 18:23:08,021 - INFO - Performing sentiment analysis
+2023-05-08 18:23:08,210 - ERROR - An error occurred: name 'news_sentiment' is not defined
+Traceback (most recent call last):
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 84, in main
+    print(f"News sentiment score for {config.selected_ticker} is {news_sentiment}")
+NameError: name 'news_sentiment' is not defined
+2023-05-08 18:24:15,251 - INFO - Program started
+2023-05-08 18:24:22,097 - INFO - Selected ticker: SHIB-USD
+2023-05-08 18:24:22,097 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 18:24:22,098 - INFO - Collecting crypto data from online resources...
+2023-05-08 18:24:22,099 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 18:24:22,100 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 18:24:22,286 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 18:24:22,287 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 18:24:22,288 - INFO - Performing data analysis
+2023-05-08 18:24:22,291 - INFO - Collecting news articles from online resources...
+2023-05-08 18:24:22,958 - INFO - Performing sentiment analysis
+2023-05-08 18:24:23,117 - ERROR - An error occurred: name 'news_sentiment' is not defined
+Traceback (most recent call last):
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 84, in main
+    print(f"News sentiment score for {config.selected_ticker} is {news_sentiment}")
+NameError: name 'news_sentiment' is not defined
+2023-05-08 18:24:55,141 - INFO - Program started
+2023-05-08 18:25:00,919 - INFO - Selected ticker: SHIB-USD
+2023-05-08 18:25:00,919 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 18:25:00,921 - INFO - Collecting crypto data from online resources...
+2023-05-08 18:25:00,921 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 18:25:00,922 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 18:25:01,132 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 18:25:01,134 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 18:25:01,134 - INFO - Performing data analysis
+2023-05-08 18:25:01,138 - INFO - Collecting news articles from online resources...
+2023-05-08 18:25:01,807 - INFO - Performing sentiment analysis
+2023-05-08 18:25:01,966 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 18:25:01,966 - INFO - Visualizing data
+2023-05-08 18:25:04,139 - ERROR - An error occurred: 'xaxis'
+Traceback (most recent call last):
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 103, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\.venv\lib\site-packages\plotly\basedatatypes.py", line 746, in __getitem__
+    raise KeyError(orig_prop)
+KeyError: 'xaxis'
