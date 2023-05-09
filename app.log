@@ -2298,3 +2298,29 @@ Traceback (most recent call last):
     raise ValueError("Unknown label type: %r" % y_type)
 ValueError: Unknown label type: 'continuous'
 2023-05-09 17:58:57,928 - INFO - Program started
+2023-05-09 17:59:18,309 - INFO - Program started
+2023-05-09 17:59:19,488 - INFO - Selected ticker: SHIB-USD
+2023-05-09 17:59:19,488 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-09 17:59:19,490 - INFO - Collecting crypto data from online resources...
+2023-05-09 17:59:19,490 - INFO - Retrieving historical data for SHIB-USD
+2023-05-09 17:59:19,491 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-09 17:59:19,807 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-09 17:59:19,810 - INFO - Filtered data for {config.selected_ticker}
+2023-05-09 17:59:19,831 - INFO - Performing data analysis
+2023-05-09 17:59:19,841 - INFO - Collecting news articles from online resources...
+2023-05-09 17:59:20,633 - INFO - Performing sentiment analysis
+2023-05-09 17:59:20,633 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-09 17:59:20,633 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-09 17:59:20,633 - INFO - Visualizing data
+2023-05-09 17:59:22,579 - INFO - Training machine learning models
+2023-05-09 17:59:51,160 - ERROR - An error occurred: Unknown label type: 'continuous'
+Traceback (most recent call last):
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 166, in main
+    pipeline.fit(X_train, y_train)
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\.venv\lib\site-packages\sklearn\pipeline.py", line 405, in fit
+    self._final_estimator.fit(Xt, y, **fit_params_last_step)
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\.venv\lib\site-packages\sklearn\linear_model\_logistic.py", line 1204, in fit
+    check_classification_targets(y)
+  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\.venv\lib\site-packages\sklearn\utils\multiclass.py", line 218, in check_classification_targets
+    raise ValueError("Unknown label type: %r" % y_type)
+ValueError: Unknown label type: 'continuous'
