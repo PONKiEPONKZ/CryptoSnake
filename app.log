@@ -62,3 +62,308 @@ Traceback (most recent call last):
   File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\.venv\lib\site-packages\plotly\basedatatypes.py", line 746, in __getitem__
     raise KeyError(orig_prop)
 KeyError: 'xaxis'
+2023-05-08 22:39:29,949 - INFO - Program started
+2023-05-08 22:39:37,196 - INFO - Selected ticker: SHIB-USD
+2023-05-08 22:39:37,196 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 22:39:37,196 - INFO - Collecting crypto data from online resources...
+2023-05-08 22:39:37,197 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 22:39:37,199 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 22:39:37,976 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 22:39:37,982 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 22:39:37,982 - INFO - Performing data analysis
+2023-05-08 22:39:38,049 - INFO - Collecting news articles from online resources...
+2023-05-08 22:39:39,065 - INFO - Performing sentiment analysis
+2023-05-08 22:39:39,320 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 22:39:39,320 - INFO - Visualizing data
+2023-05-08 22:40:15,323 - WARNING - xaxis not found in figure layout
+2023-05-08 22:40:15,325 - ERROR - An error occurred: 'xaxis'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
+  File "/home/ponkie/.local/lib/python3.8/site-packages/plotly/basedatatypes.py", line 746, in __getitem__
+    raise KeyError(orig_prop)
+KeyError: 'xaxis'
+2023-05-08 22:41:00,759 - INFO - Program started
+2023-05-08 22:42:05,421 - INFO - Selected ticker: SHIB-USD
+2023-05-08 22:42:05,422 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 22:42:05,422 - INFO - Collecting crypto data from online resources...
+2023-05-08 22:42:05,422 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 22:42:05,425 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 22:42:05,775 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 22:42:05,781 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 22:42:05,782 - INFO - Performing data analysis
+2023-05-08 22:42:05,789 - INFO - Collecting news articles from online resources...
+2023-05-08 22:42:06,553 - INFO - Performing sentiment analysis
+2023-05-08 22:42:06,803 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 22:42:06,804 - INFO - Visualizing data
+2023-05-08 22:42:17,040 - WARNING - xaxis not found in figure layout
+2023-05-08 22:42:17,041 - ERROR - An error occurred: 'xaxis'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
+  File "/home/ponkie/.local/lib/python3.8/site-packages/plotly/basedatatypes.py", line 746, in __getitem__
+    raise KeyError(orig_prop)
+KeyError: 'xaxis'
+2023-05-08 22:48:51,101 - INFO - Program started
+2023-05-08 22:49:59,615 - INFO - Selected ticker: SHIB-USD
+2023-05-08 22:49:59,615 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 22:49:59,615 - INFO - Collecting crypto data from online resources...
+2023-05-08 22:49:59,616 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 22:49:59,618 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 22:49:59,915 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 22:49:59,920 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 22:49:59,921 - INFO - Performing data analysis
+2023-05-08 22:49:59,932 - INFO - Collecting news articles from online resources...
+2023-05-08 22:50:00,651 - INFO - Performing sentiment analysis
+2023-05-08 22:50:00,881 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 22:50:00,882 - INFO - Visualizing data
+2023-05-08 22:50:08,292 - WARNING - xaxis not found in figure layout
+2023-05-08 22:50:08,293 - ERROR - An error occurred: 'xaxis'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
+  File "/home/ponkie/.local/lib/python3.8/site-packages/plotly/basedatatypes.py", line 746, in __getitem__
+    raise KeyError(orig_prop)
+KeyError: 'xaxis'
+2023-05-08 22:53:40,647 - INFO - Program started
+2023-05-08 22:55:03,497 - INFO - Selected ticker: SHIB-USD
+2023-05-08 22:55:03,497 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 22:55:03,497 - INFO - Collecting crypto data from online resources...
+2023-05-08 22:55:03,498 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 22:55:03,500 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 22:55:03,826 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 22:55:03,832 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 22:55:03,833 - INFO - Performing data analysis
+2023-05-08 22:55:03,843 - INFO - Collecting news articles from online resources...
+2023-05-08 22:55:04,647 - INFO - Performing sentiment analysis
+2023-05-08 22:55:04,904 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 22:55:04,904 - INFO - Visualizing data
+2023-05-08 22:55:11,601 - WARNING - xaxis not found in figure layout
+2023-05-08 22:55:16,794 - ERROR - An error occurred: 'xaxis'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
+  File "/home/ponkie/.local/lib/python3.8/site-packages/plotly/basedatatypes.py", line 746, in __getitem__
+    raise KeyError(orig_prop)
+KeyError: 'xaxis'
+2023-05-08 23:18:19,752 - INFO - Program started
+2023-05-08 23:18:22,781 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:18:22,781 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:18:22,781 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:18:22,782 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:18:22,784 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:18:23,496 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:18:23,502 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:18:23,503 - INFO - Performing data analysis
+2023-05-08 23:18:23,566 - INFO - Collecting news articles from online resources...
+2023-05-08 23:18:24,455 - INFO - Performing sentiment analysis
+2023-05-08 23:18:24,699 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:18:24,699 - INFO - Visualizing data
+2023-05-08 23:18:39,197 - WARNING - xaxis not found in figure layout
+2023-05-08 23:18:42,588 - ERROR - An error occurred: 'xaxis'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
+  File "/home/ponkie/.local/lib/python3.8/site-packages/plotly/basedatatypes.py", line 746, in __getitem__
+    raise KeyError(orig_prop)
+KeyError: 'xaxis'
+2023-05-08 23:26:53,416 - INFO - Program started
+2023-05-08 23:26:59,721 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:26:59,721 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:26:59,721 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:26:59,722 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:26:59,724 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:27:00,004 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:27:00,011 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:27:00,012 - INFO - Performing data analysis
+2023-05-08 23:27:00,020 - INFO - Collecting news articles from online resources...
+2023-05-08 23:27:00,781 - INFO - Performing sentiment analysis
+2023-05-08 23:27:01,049 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:27:01,049 - INFO - Visualizing data
+2023-05-08 23:27:09,860 - WARNING - xaxis not found in figure layout
+2023-05-08 23:27:13,487 - ERROR - An error occurred: 'Layout' object is not callable
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.layout()['xaxis']['domain'])
+TypeError: 'Layout' object is not callable
+2023-05-08 23:30:13,732 - INFO - Program started
+2023-05-08 23:30:21,925 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:30:21,925 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:30:21,925 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:30:21,926 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:30:21,928 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:30:22,300 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:30:22,305 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:30:22,306 - INFO - Performing data analysis
+2023-05-08 23:30:22,313 - INFO - Collecting news articles from online resources...
+2023-05-08 23:30:23,076 - INFO - Performing sentiment analysis
+2023-05-08 23:30:23,334 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:30:23,334 - INFO - Visualizing data
+2023-05-08 23:30:33,792 - WARNING - xaxis not found in figure layout
+2023-05-08 23:30:37,121 - ERROR - An error occurred: 'Layout' object is not callable
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    crypto_data, candlestick_charts, fig=fig, ax=fig.layout()['xaxis']['domain'])
+TypeError: 'Layout' object is not callable
+2023-05-08 23:31:58,695 - INFO - Program started
+2023-05-08 23:32:01,229 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:32:01,229 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:32:01,230 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:32:01,230 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:32:01,232 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:32:01,564 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:32:01,570 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:32:01,571 - INFO - Performing data analysis
+2023-05-08 23:32:01,577 - INFO - Collecting news articles from online resources...
+2023-05-08 23:32:02,452 - INFO - Performing sentiment analysis
+2023-05-08 23:32:02,717 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:32:02,717 - INFO - Visualizing data
+2023-05-08 23:32:13,161 - WARNING - xaxis not found in figure layout
+2023-05-08 23:32:16,487 - ERROR - An error occurred: name 'np' is not defined
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 107, in main
+    fig, ax = trend_lines.plot_trend_lines(
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/visualization/trend_lines.py", line 12, in plot_trend_lines
+    x = np.array(range(len(close_prices)))
+NameError: name 'np' is not defined
+2023-05-08 23:34:29,009 - INFO - Program started
+2023-05-08 23:34:31,236 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:34:31,237 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:34:31,237 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:34:31,237 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:34:31,240 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:34:31,819 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:34:31,825 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:34:31,829 - INFO - Performing data analysis
+2023-05-08 23:34:31,893 - INFO - Collecting news articles from online resources...
+2023-05-08 23:34:32,724 - INFO - Performing sentiment analysis
+2023-05-08 23:34:33,208 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:34:33,209 - INFO - Visualizing data
+2023-05-08 23:34:48,057 - WARNING - xaxis not found in figure layout
+2023-05-08 23:34:51,907 - ERROR - An error occurred: 'tuple' object has no attribute 'plot'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 107, in main
+    fig, ax = trend_lines.plot_trend_lines(
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/visualization/trend_lines.py", line 24, in plot_trend_lines
+    ax.plot(candlestick_data.index, candlestick_data["Close"], label="Data")
+AttributeError: 'tuple' object has no attribute 'plot'
+2023-05-08 23:40:15,832 - INFO - Program started
+2023-05-08 23:40:19,453 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:40:19,454 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:40:19,454 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:40:19,454 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:40:19,456 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:40:19,759 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:40:19,765 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:40:19,766 - INFO - Performing data analysis
+2023-05-08 23:40:19,774 - INFO - Collecting news articles from online resources...
+2023-05-08 23:40:20,817 - INFO - Performing sentiment analysis
+2023-05-08 23:40:21,041 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:40:21,041 - INFO - Visualizing data
+2023-05-08 23:40:25,909 - WARNING - xaxis not found in figure layout
+2023-05-08 23:40:29,578 - ERROR - An error occurred: plot_trend_lines() got an unexpected keyword argument 'ax'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 107, in main
+    fig, ax = trend_lines.plot_trend_lines(
+TypeError: plot_trend_lines() got an unexpected keyword argument 'ax'
+2023-05-08 23:42:34,473 - INFO - Program started
+2023-05-08 23:43:12,150 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:43:12,150 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:43:12,151 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:43:12,151 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:43:12,154 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:43:12,527 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:43:12,533 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:43:12,534 - INFO - Performing data analysis
+2023-05-08 23:43:12,542 - INFO - Collecting news articles from online resources...
+2023-05-08 23:43:13,393 - INFO - Performing sentiment analysis
+2023-05-08 23:43:13,697 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:43:13,697 - INFO - Visualizing data
+2023-05-08 23:43:34,355 - WARNING - xaxis not found in figure layout
+2023-05-08 23:43:37,975 - ERROR - An error occurred: plot_trend_lines() got an unexpected keyword argument 'ax'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 107, in main
+    print(fig.update_layout())
+TypeError: plot_trend_lines() got an unexpected keyword argument 'ax'
+2023-05-08 23:45:57,293 - INFO - Program started
+2023-05-08 23:46:01,879 - INFO - Selected ticker: SHIB-USD
+2023-05-08 23:46:01,879 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-08 23:46:01,880 - INFO - Collecting crypto data from online resources...
+2023-05-08 23:46:01,880 - INFO - Retrieving historical data for SHIB-USD
+2023-05-08 23:46:01,882 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-08 23:46:04,189 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-08 23:46:04,195 - INFO - Filtered data for {config.selected_ticker}
+2023-05-08 23:46:04,357 - INFO - Performing data analysis
+2023-05-08 23:46:04,481 - INFO - Collecting news articles from online resources...
+2023-05-08 23:46:05,214 - INFO - Performing sentiment analysis
+2023-05-08 23:46:05,683 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-08 23:46:05,683 - INFO - Visualizing data
+2023-05-08 23:48:01,360 - WARNING - xaxis not found in figure layout
+2023-05-08 23:48:11,257 - ERROR - An error occurred: 'tuple' object has no attribute 'add_trace'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    fig = trend_lines.plot_trend_lines(
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/visualization/trend_lines.py", line 24, in plot_trend_lines
+    fig.add_trace(go.Candlestick(x=candlestick_data.index,
+AttributeError: 'tuple' object has no attribute 'add_trace'
+2023-05-09 00:03:37,162 - INFO - Program started
+2023-05-09 00:03:43,012 - INFO - Selected ticker: SHIB-USD
+2023-05-09 00:03:43,012 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-09 00:03:43,012 - INFO - Collecting crypto data from online resources...
+2023-05-09 00:03:43,013 - INFO - Retrieving historical data for SHIB-USD
+2023-05-09 00:03:43,015 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-09 00:03:45,099 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-09 00:03:45,105 - INFO - Filtered data for {config.selected_ticker}
+2023-05-09 00:03:45,291 - INFO - Performing data analysis
+2023-05-09 00:03:45,368 - INFO - Collecting news articles from online resources...
+2023-05-09 00:03:46,098 - INFO - Performing sentiment analysis
+2023-05-09 00:03:46,399 - INFO - News sentiment score for SHIB-USD is 0.11000000000000001
+2023-05-09 00:03:46,399 - INFO - Visualizing data
+2023-05-09 00:04:45,050 - WARNING - xaxis not found in figure layout
+2023-05-09 00:04:50,196 - ERROR - An error occurred: 'CandlestickCharts' object has no attribute 'index'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    fig = trend_lines.plot_trend_lines(crypto_data, candlestick_charts)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/visualization/trend_lines.py", line 23, in plot_trend_lines
+    fig.add_trace(go.Candlestick(x=candlestick_data.index,
+AttributeError: 'CandlestickCharts' object has no attribute 'index'
+2023-05-09 00:10:08,006 - INFO - Program started
+2023-05-09 00:10:11,967 - INFO - Selected ticker: BTC-USD
+2023-05-09 00:10:11,967 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-09 00:10:11,967 - INFO - Collecting crypto data from online resources...
+2023-05-09 00:10:11,968 - INFO - Retrieving historical data for BTC-USD
+2023-05-09 00:10:11,970 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-09 00:10:12,285 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-09 00:10:12,290 - INFO - Filtered data for {config.selected_ticker}
+2023-05-09 00:10:12,352 - INFO - Performing data analysis
+2023-05-09 00:10:12,362 - INFO - Collecting news articles from online resources...
+2023-05-09 00:10:13,276 - INFO - Performing sentiment analysis
+2023-05-09 00:10:13,507 - INFO - News sentiment score for BTC-USD is 0.26666666666666666
+2023-05-09 00:10:13,507 - INFO - Visualizing data
+2023-05-09 00:10:55,275 - WARNING - xaxis not found in figure layout
+2023-05-09 00:10:58,052 - ERROR - An error occurred: 'CandlestickCharts' object has no attribute 'index'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    fig = trend_lines.plot_trend_lines(crypto_data, candlestick_charts)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/visualization/trend_lines.py", line 23, in plot_trend_lines
+    fig.add_trace(go.Candlestick(x=candlestick_charts.index,
+AttributeError: 'CandlestickCharts' object has no attribute 'index'
+2023-05-09 00:29:00,850 - INFO - Program started
+2023-05-09 00:29:09,319 - INFO - Selected ticker: SHIB-USD
+2023-05-09 00:29:09,319 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-09 00:29:09,320 - INFO - Collecting crypto data from online resources...
+2023-05-09 00:29:09,320 - INFO - Retrieving historical data for SHIB-USD
+2023-05-09 00:29:09,322 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-09 00:29:10,601 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-09 00:29:10,607 - INFO - Filtered data for {config.selected_ticker}
+2023-05-09 00:29:10,687 - INFO - Performing data analysis
+2023-05-09 00:29:10,767 - INFO - Collecting news articles from online resources...
+2023-05-09 00:29:11,495 - INFO - Performing sentiment analysis
+2023-05-09 00:29:12,160 - INFO - News sentiment score for SHIB-USD is 0.11000000000000001
+2023-05-09 00:29:12,161 - INFO - Visualizing data
+2023-05-09 00:30:40,020 - WARNING - xaxis not found in figure layout
+2023-05-09 00:30:43,814 - ERROR - An error occurred: name 'candlestick_data' is not defined
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 108, in main
+    fig = trend_lines.plot_trend_lines(crypto_data, candlestick_data)
+NameError: name 'candlestick_data' is not defined

@@ -115,7 +115,7 @@ class CandlestickCharts:
                         dict(step="all")
                     ])
                 ),
-                color = "grey",
+                color = "pink",
                 rangeslider=dict(
                     visible=False
                 ),

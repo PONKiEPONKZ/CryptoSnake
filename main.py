@@ -64,6 +64,7 @@ def main():
         print("Done.")
         print()
         null_locations = crypto_data.isnull()
+        print(null_locations)
 
         # Perform data analysis on the collected historical data
         logger.log_info("Performing data analysis")
@@ -100,12 +101,11 @@ def main():
         
         trend_lines = TrendLines()
         if  'xaxis' in fig.update_layout():
-        ax=fig.update_layout()['xaxis']['domain']
-    else:
-        logger.log_warning("xaxis not found in figure layout")
-
-        fig, ax = trend_lines.plot_trend_lines(
-                    crypto_data, candlestick_charts, fig=fig, ax=fig.update_layout()['xaxis']['domain'])
+            ax=fig.update_layout['xaxis']['domain']
+        else:
+            logger.log_warning("xaxis not found in figure layout")
+        print(fig.update_layout())
+        fig = trend_lines.plot_trend_lines(crypto_data, candlestick_data)
 
         # Prepare data for machine learning
         logger.log_info("Training machine learning models")
