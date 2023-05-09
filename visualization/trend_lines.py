@@ -20,11 +20,11 @@ class TrendLines:
 
         # plot the data and trend line
         fig = go.Figure()
-        fig.add_trace(go.Candlestick(x=candlestick_data.index,
-                                     open=candlestick_data['Open'],
-                                     high=candlestick_data['High'],
-                                     low=candlestick_data['Low'],
-                                     close=candlestick_data['Close'], name="Candlestick"))
+        fig.add_trace(go.Candlestick(x=crypto_data.index,
+                                     open=crypto_data['Open'],
+                                     high=crypto_data['High'],
+                                     low=crypto_data['Low'],
+                                     close=crypto_data['Close'], name="Candlestick"))
         fig.add_trace(go.Scatter(x=crypto_data.index, y=trendline,
                                  mode='lines', name='Trend line'))
         fig.update_layout(title="Trend lines")

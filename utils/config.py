@@ -23,8 +23,6 @@ def show_loading_animation():
 log_file = os.path.join(ROOT_DIR, 'app.log')
 
 # selected_ticker configuration
-
-
 def set_selected_ticker(value):
     global selected_ticker
     selected_ticker = value
@@ -50,5 +48,27 @@ TWITTER_API_KEY = 'Fdq7nQsLLBAbxZfVJakKYCf7f'
 TWITTER_API_SECRET = 'jNWCXn9cPlfZY5nmotJBTRe8PwLNlmQwHTybaFTc97tGsVBNCS'
 TWITTER_ACCESS_TOKEN = '1471859951664603138-sK5YaEQUP04s3gPmSueLVCyjbg9oya'
 TWITTER_ACCESS_SECRET = '76HUS3YBCxFZRW6j9Qk4CFao6wa4KI59Gdgi1Ssgu4DvB'
+
+# Setting for the graphs
+TICK_FONT_COLOR = "#FFFFFF" # white
+SPIKE_COLOR = "#6495ED" # cornflower blue
+AXIS_BG_COLOR = "#2E2E2E" # dark gray
+LINE_COLOR = "#FFFFFF" # white
+TITLE_FONT_COLOR = "#FFFFFF" # white
+PLOT_BG_COLOR = "#2a2e39" # midnight blue
+PAPER_BG_COLOR = "#000000" # white
+GRID_COLOR = "#A9A9A9" # dark gray
+ZEROLINE_COLOR = "#FFFF00" # yellow
+AXIS_FONT_COLOR = "#FFFFFF" # white
+AXIS_TITLE_COLOR = "#FFFFFF" # white
+OVERBOUGHT_COLOR = "#FF0000" # red
+OVERSOLD_COLOR = "#008000" # green
+BULLISH_COLOR = "#008000" # green
+BEARISH_COLOR = "#FF0000" # red
+VOLUME_COLOR_MAPPING = {
+"increase": "#008000", # green
+"decrease": "#FF0000", # red
+"static": "#FFA500" # orange
+}
 
 PLOT_HEIGHT = 800

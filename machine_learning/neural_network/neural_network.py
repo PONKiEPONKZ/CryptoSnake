@@ -23,7 +23,7 @@ class NeuralNetwork:
         model.compile(loss='mean_squared_error', optimizer=optimizer)
         return model
         
-    def train(self, X_train, y_train, epochs=100, batch_size=32):
+    def train(self, X_train, y_train, epochs=1000, batch_size=32):
         self.model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=0)
 
         

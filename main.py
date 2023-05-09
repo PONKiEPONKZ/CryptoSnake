@@ -10,11 +10,11 @@ from risk_management.diversification import calculate_portfolio_allocation
 from risk_management.stop_limit import stop_limit_order
 from risk_management.stop_loss import stop_loss_order
 from machine_learning.lstm_model import LSTMModel
-from machine_learning.random_forest_model import RandomForestModel
-from machine_learning.gru_model import GRUModel
-from machine_learning.regression_model import RegressionModel
-from machine_learning.decision_tree import DecisionTree
-from machine_learning.neural_network import NeuralNetwork
+from machine_learning.random_forest.random_forest import RandomForestModel
+from machine_learning.gru.gru import GRUModel
+from machine_learning.regression.regression import RegressionModel
+from machine_learning.decision_tree.decision_tree import DecisionTree
+from machine_learning.neural_network.neural_network import NeuralNetwork
 from data_analysis.sentiment_analysis import SentimentalAnalysis
 from data_analysis.fundamental_analysis import FundamentalAnalysis
 from data_analysis.technical_analysis import perform_technical_analysis
@@ -99,13 +99,12 @@ def main():
             crypto_data_df, technical_analysis_results
         )
         
-        trend_lines = TrendLines()
-        if  'xaxis' in fig.update_layout():
-            ax=fig.update_layout['xaxis']['domain']
-        else:
-            logger.log_warning("xaxis not found in figure layout")
-        print(fig.update_layout())
-        fig = trend_lines.plot_trend_lines(crypto_data, candlestick_data)
+        #trend_lines = TrendLines()
+        #if  'xaxis' in fig.update_layout():
+        #    ax=fig.update_layout['xaxis']['domain']
+        #else:
+        #    logger.log_warning("xaxis not found in figure layout")
+        #fig = trend_lines.plot_trend_lines(crypto_data, candlestick_charts)
 
         # Prepare data for machine learning
         logger.log_info("Training machine learning models")
@@ -138,7 +137,7 @@ def main():
         fig.show()
 
         # Extract the features and labels from the crypto_data
-        crypto_data["Date"] = crypto_data.index.astype(int) // 10**9
+        crypto_data["Date"] = crypto_data.index.astype('int64') // 10**9
         features = crypto_data[["Date", "Open",
                                 "High", "Low", "Volume"]].values
         close_diff = np.diff(crypto_data["Close"].values)
