@@ -9,7 +9,7 @@ from utils import config
 from risk_management.diversification import calculate_portfolio_allocation
 from risk_management.stop_limit import stop_limit_order
 from risk_management.stop_loss import stop_loss_order
-from machine_learning.lstm_model import LSTMModel
+from machine_learning.lstm_model.lstm import LSTMModel
 from machine_learning.random_forest.random_forest import RandomForestModel
 from machine_learning.gru.gru import GRUModel
 from machine_learning.regression.regression import RegressionModel
