@@ -61,8 +61,6 @@ def perform_technical_analysis(df):
     macd, signal, hist = get_macd(df)
     upper, middle, lower = get_bollinger_bands(df)
     
-    print(df.index)
-    
     obv = on_balance_volume(df)
     
     if any(x is None for x in [sma, ema, rsi, macd, signal, hist, upper, middle, lower, obv]):

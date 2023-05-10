@@ -72,3 +72,8 @@ VOLUME_COLOR_MAPPING = {
 }
 
 PLOT_HEIGHT = 800
+
+# Portfolio settings
+stop_loss_threshold = ''
+stop_limit_threshold = ''
+portfolio_size = ''

@@ -4,7 +4,8 @@ This module contains the stop_loss_order function for implementing the stop loss
 
 # stop_loss.py
 
-def stop_loss_order(price, stop_loss_percent):
-    stop_loss_price = price * (1 - stop_loss_percent / 100)
+def stop_loss_order(Close, stop_loss_percent):
+    stop_loss_price = float(Close) * (1 - stop_loss_percent / 100)
+
     return stop_loss_price
 

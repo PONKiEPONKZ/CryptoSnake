@@ -23,7 +23,7 @@ def get_crypto_data():
 
     # Drop NaN values
     historical_data = historical_data.dropna()
-
+    
     logger.log_info("Filtered data for {config.selected_ticker}")
 
     return historical_data

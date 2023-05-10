@@ -53,8 +53,19 @@ class CandlestickCharts:
                     row=1,
                     col=1
                 )
-            elif key in ['RSI', 'MACD', 'Signal', 'Hist']:
-                # Add to bottom subplot
+            elif key == 'Hist':
+                # Add a bar chart for Hist
+                fig.add_trace(
+                    go.Bar(
+                        x=crypto_data.index,
+                        y=value,
+                        name=key,
+                    ),
+                    row=2,
+                    col=1
+                )
+            else:
+                # Add to bottom subplot as a Scatter plot
                 fig.add_trace(
                     go.Scatter(
                         x=crypto_data.index,
