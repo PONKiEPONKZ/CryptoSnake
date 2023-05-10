@@ -9,12 +9,13 @@ from utils import config
 from risk_management.diversification import calculate_portfolio_allocation
 from risk_management.stop_limit import stop_limit_order
 from risk_management.stop_loss import stop_loss_order
-from machine_learning.lstm_model.lstm import LSTMModel
-from machine_learning.random_forest.random_forest import RandomForestModel
-from machine_learning.gru.gru import GRUModel
-from machine_learning.regression.regression import RegressionModel
-from machine_learning.decision_tree.decision_tree import DecisionTree
-from machine_learning.neural_network.neural_network import NeuralNetwork
+from machine_learning.models.lstm_model.lstm import LSTMModel
+from machine_learning.prep.ml_prep import prepare_data
+from machine_learning.models.random_forest.random_forest import RandomForestModel
+from machine_learning.models.gru.gru import GRUModel
+from machine_learning.models.regression.regression import RegressionModel
+from machine_learning.models.decision_tree.decision_tree import DecisionTree
+from machine_learning.models.neural_network.neural_network import NeuralNetwork
 from data_analysis.sentiment_analysis import SentimentalAnalysis
 from data_analysis.fundamental_analysis import FundamentalAnalysis
 from data_analysis.technical_analysis import perform_technical_analysis
@@ -106,89 +107,69 @@ def main():
         #    logger.log_warning("xaxis not found in figure layout")
         #fig = trend_lines.plot_trend_lines(crypto_data, candlestick_charts)
 
-        # Prepare data for machine learning
-        logger.log_info("Training machine learning models")
-        X = crypto_data_df.drop(["Close"], axis=1)
-        y = crypto_data_df["Close"]
-
-        # Split the data into training and testing sets
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=0.2, random_state=42
-        )
+        # Prepare data for machine learning and split the crypto data into features (X) and target (y)
+        logger.log_info("Splitting the crypto data into features (X) and target (y)")
+        X_train, X_test, y_train, y_test = prepare_data(crypto_data_df)
 
         # Train the neural network model
-        trained_neural_network_model = NeuralNetwork(
-            input_size=X_train.shape[1], output_size=1
-        )
-        trained_neural_network_model.train(X_train, y_train)
+        #trained_neural_network_model = NeuralNetwork(
+        #    input_size=X_train.shape[1], output_size=1
+        #)
+        #trained_neural_network_model.train(X_train, y_train)
 
         # Predict on the trained neural network test data
-        y_pred = trained_neural_network_model.predict(X_test)
+        #y_pred = trained_neural_network_model.predict(X_test)
 
         # Create a new trace for the predicted values
-        trace_pred = go.Scatter(
-            x=X_test.index, y=y_pred.flatten(), name='Predicted')
+        #trace_pred = go.Scatter(
+        #x=X_test.index, y=y_pred.flatten(), name='Predicted')
 
         # Add the new trace to the existing fig object
-        fig.add_trace(trace_pred)
+        #fig.add_trace(trace_pred)
 
         # Update the figure layout and show the chart
-        fig.update_layout(title='My Chart with Predicted Values')
-        fig.show()
+        #fig.update_layout(title='My Chart with Predicted Values')
+        #fig.show()
 
-        # Extract the features and labels from the crypto_data
-        crypto_data["Date"] = crypto_data.index.astype('int64') // 10**9
-        features = crypto_data[["Date", "Open",
-                                "High", "Low", "Volume"]].values
-        close_diff = np.diff(crypto_data["Close"].values)
-        labels = np.concatenate([[0], np.sign(close_diff)])
+        
+        
+        # Create an instance of LSTM model
+        model = LSTMModel()
 
-        # Create a dictionary with the features and labels
-        data = {"features": features, "labels": labels}
+        # Train the model using the training data
+        model.train(X_train)
 
-        # Define your pipeline with the SimpleImputer transformer
-        pipeline = Pipeline(
-            [
-                (
-                    "imputer",
-                    SimpleImputer(strategy="mean"),
-                ),  # Replace missing values with the mean of each feature
-                (
-                    "scaler",
-                    StandardScaler(),
-                ),  # Scale the features to zero mean and unit variance
-                # Train a logistic regression model
-                ("clf", LogisticRegression()),
-            ]
-        )
+        # Make predictions using the test data
+        predictions = model.predict(X_test)
+        
+        # Convert DataFrames to numpy arrays
+        X_test_np = X_test.to_numpy()
+        y_test_np = y_test.to_numpy()
 
-        # Fit the pipeline to your training data
-        pipeline.fit(X_train, y_train)
+        # Evaluate the model on the test set
+        mse = model.evaluate(X_test_np, y_test_np)
 
-        # Use the fitted pipeline to predict on new data
-        y_pred = pipeline.predict(X_test)
+        logger.log_info(f"Mean squared error on test set: {mse}")
+        print(f"Mean squared error on test set: {mse}")
+        
+        # create a range of dates for the predicted values
+        start_date = crypto_data.index[0]
+        end_date = crypto_data.index[-1]
+        date_range = pd.date_range(start=start_date, end=end_date, freq='D')
 
-        # Train the decision tree on the data
-        decision_tree = DecisionTree()
-        decision_tree.train(data)
+        # create a trace for the predicted values
+        predicted_trace = go.Scatter(x=date_range, y=predictions.flatten(), name='Predicted')
 
-        # Test the model
-        test_data = get_test_data()
-        test_features = test_data[[
-            "Open", "High", "Low", "Volume", "Date"]].values
-        test_labels = np.sign(np.diff(test_data["Close"].values))
-        test_data = {"features": test_features, "labels": test_labels}
-        accuracy = test_model(decision_tree, test_data)
+        # add the predicted trace to the figure data
+        fig.update_layout(title='f"{config.selected_ticker.upper()} Candlestick Chart"')
+        print('Added predicted trace to figure data')
+    
+        print(crypto_data)
 
-        print(f"Accuracy: {accuracy:.2f}")
-        if accuracy < 0.5:
-            print(
-                "Model is not performing well. You may want to try a different model or adjust the hyperparameters."
-            )
-            sys.exit(1)
+        # Extractng last closing prices
+        last_close_price = crypto_data.iloc[-1]['Close']
 
-        trained_regression_model = RegressionModel.train(crypto_data)
-
+        
         # Apply risk management strategies
         logger.log_info("Applying risk management strategies")
         stop_loss_order(crypto_data, config.stop_loss_threshold)
