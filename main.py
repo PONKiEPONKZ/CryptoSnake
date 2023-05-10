@@ -156,24 +156,25 @@ def main():
         start_date = crypto_data.index[0]
         end_date = crypto_data.index[-1]
         date_range = pd.date_range(start=start_date, end=end_date, freq='D')
-
+        print(date_range)
+        
         # create a trace for the predicted values
         predicted_trace = go.Scatter(x=date_range, y=predictions.flatten(), name='Predicted')
-
+        print(date_range)
+        
         # add the predicted trace to the figure data
-        fig.update_layout(title='f"{config.selected_ticker.upper()} Candlestick Chart"')
+        fig.add_trace(predicted_trace)
+        fig.update_layout(title="LTSM Prediction")
+        fig.show()
         print('Added predicted trace to figure data')
-    
-        print(crypto_data)
 
         # Extractng last closing prices
         last_close_price = crypto_data.iloc[-1]['Close']
-
         
         # Apply risk management strategies
         logger.log_info("Applying risk management strategies")
-        stop_loss_order(crypto_data, config.stop_loss_threshold)
-        stop_limit_order(crypto_data, config.stop_limit_threshold)
+        stop_loss_order(crypto_data, config.stop_loss_threshold, last_close_price)
+        stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
         calculate_portfolio_allocation(crypto_data, config.portfolio_size)
 
         # Log results

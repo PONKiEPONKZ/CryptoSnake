@@ -4,8 +4,8 @@ This module contains the stop_limit_order function for implementing the stop lim
 
 # stop_limit.py
 
-def stop_limit_order(price, stop_loss_percent, limit_percent):
-    stop_loss_price = price * (1 - stop_loss_percent / 100)
-    limit_price = price * (1 + limit_percent / 100)
+def stop_limit_order( limit_percent, stop_loss_percent, last_close_price):
+    stop_loss_price = last_close_price * (1 - stop_loss_percent / 100)
+    limit_price = last_close_price * (1 + limit_percent / 100)
     return stop_loss_price, limit_price
 

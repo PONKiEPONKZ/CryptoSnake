@@ -23,7 +23,7 @@ class LSTMModel:
         self.model.add(LSTM(50, input_shape=(look_back, X.shape[2])))
         self.model.add(Dense(1))
         self.model.compile(loss='mean_squared_error', optimizer='adam')
-        self.model.fit(X, Y, epochs=100, batch_size=32, verbose=2)
+        self.model.fit(X, Y, epochs=30, batch_size=32, verbose=2)
 
     def predict(self, data, look_back=1):
         # function to predict the output using the trained LSTM model and the given data

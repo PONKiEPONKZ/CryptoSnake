@@ -1414,3 +1414,274 @@ Traceback (most recent call last):
   File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\risk_management\stop_loss.py", line 8, in stop_loss_order
     stop_loss_price = float(Close) * (1 - stop_loss_percent / 100)
 TypeError: float() argument must be a string or a real number, not 'DataFrame'
+2023-05-10 19:11:08,192 - INFO - Program started
+2023-05-10 19:11:10,638 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:11:10,638 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:11:10,641 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:11:10,641 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:11:10,642 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:11:10,857 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:11:10,860 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:11:10,885 - INFO - Performing data analysis
+2023-05-10 19:11:10,895 - INFO - Collecting news articles from online resources...
+2023-05-10 19:11:11,637 - INFO - Performing sentiment analysis
+2023-05-10 19:11:11,637 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:11:11,637 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:11:11,638 - INFO - Visualizing data
+2023-05-10 19:11:14,024 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:11:47,627 - INFO - Mean squared error on test set: 2.515880263706961e-09
+2023-05-10 19:11:47,644 - INFO - Applying risk management strategies
+2023-05-10 19:11:47,644 - ERROR - An error occurred: float() argument must be a string or a real number, not 'DataFrame'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 172, in main
+    stop_loss_order(crypto_data, config.stop_loss_threshold)
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\risk_management\stop_loss.py", line 8, in stop_loss_order
+    stop_loss_price = float(Close) * (1 - stop_loss_percent / 100)
+TypeError: float() argument must be a string or a real number, not 'DataFrame'
+2023-05-10 19:19:03,523 - INFO - Program started
+2023-05-10 19:19:05,579 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:19:05,579 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:19:05,581 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:19:05,582 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:19:05,582 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:19:05,849 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:19:05,851 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:19:05,875 - INFO - Performing data analysis
+2023-05-10 19:19:05,883 - INFO - Collecting news articles from online resources...
+2023-05-10 19:19:06,665 - INFO - Performing sentiment analysis
+2023-05-10 19:19:06,665 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:19:06,666 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:19:06,666 - INFO - Visualizing data
+2023-05-10 19:19:09,218 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:19:44,656 - INFO - Mean squared error on test set: 1.4418496749396093e-08
+2023-05-10 19:19:44,680 - INFO - Applying risk management strategies
+2023-05-10 19:19:44,680 - ERROR - An error occurred: stop_loss_order() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 174, in main
+    stop_loss_order(crypto_data, config.stop_loss_threshold, last_close_price)
+TypeError: stop_loss_order() takes 2 positional arguments but 3 were given
+2023-05-10 19:20:32,561 - INFO - Program started
+2023-05-10 19:20:54,474 - INFO - Program started
+2023-05-10 19:20:57,683 - INFO - Selected ticker: EGLD-USD
+2023-05-10 19:20:57,683 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:20:57,684 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:20:57,685 - INFO - Retrieving historical data for EGLD-USD
+2023-05-10 19:20:57,686 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:20:57,934 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:20:57,935 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:20:57,963 - INFO - Performing data analysis
+2023-05-10 19:20:57,969 - INFO - Collecting news articles from online resources...
+2023-05-10 19:20:58,554 - INFO - Performing sentiment analysis
+2023-05-10 19:20:58,730 - INFO - News sentiment score for EGLD-USD is -0.030357142857142853
+2023-05-10 19:20:58,730 - INFO - Visualizing data
+2023-05-10 19:21:01,418 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:21:47,357 - INFO - Mean squared error on test set: 7354.447416982276
+2023-05-10 19:21:47,379 - INFO - Applying risk management strategies
+2023-05-10 19:21:47,379 - ERROR - An error occurred: 'int' object has no attribute 'iloc'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 174, in main
+    stop_loss_order(config.stop_loss_threshold, last_close_price)
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\risk_management\stop_loss.py", line 8, in stop_loss_order
+    last_close_price = crypto_data.iloc[-1]['Close']
+AttributeError: 'int' object has no attribute 'iloc'
+2023-05-10 19:24:16,915 - INFO - Program started
+2023-05-10 19:24:56,310 - INFO - Program started
+2023-05-10 19:25:01,131 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:25:01,131 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:25:01,133 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:25:01,133 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:25:01,134 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:25:01,347 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:25:01,350 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:25:01,374 - INFO - Performing data analysis
+2023-05-10 19:25:01,380 - INFO - Collecting news articles from online resources...
+2023-05-10 19:25:02,140 - INFO - Performing sentiment analysis
+2023-05-10 19:25:02,140 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:25:02,141 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:25:02,141 - INFO - Visualizing data
+2023-05-10 19:25:04,700 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:25:41,635 - INFO - Mean squared error on test set: 5.3017461930022764e-09
+2023-05-10 19:25:41,656 - INFO - Applying risk management strategies
+2023-05-10 19:25:41,657 - ERROR - An error occurred: name 'limit_percent' is not defined
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 175, in main
+    stop_limit_order(crypto_data, config.stop_limit_threshold, last_close_price)
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\risk_management\stop_limit.py", line 9, in stop_limit_order
+    limit_price = last_close_price * (1 + limit_percent / 100)
+NameError: name 'limit_percent' is not defined
+2023-05-10 19:29:27,634 - INFO - Program started
+2023-05-10 19:29:30,098 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:29:30,098 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:29:30,101 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:29:30,102 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:29:30,103 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:29:30,337 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:29:30,343 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:29:30,370 - INFO - Performing data analysis
+2023-05-10 19:29:30,378 - INFO - Collecting news articles from online resources...
+2023-05-10 19:29:31,112 - INFO - Performing sentiment analysis
+2023-05-10 19:29:31,112 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:29:31,113 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:29:31,113 - INFO - Visualizing data
+2023-05-10 19:29:33,702 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:30:09,958 - INFO - Mean squared error on test set: 6.9143196384869545e-09
+2023-05-10 19:30:09,992 - INFO - Applying risk management strategies
+2023-05-10 19:30:09,993 - ERROR - An error occurred: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 175, in main
+    stop_limit_order(crypto_data, config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+2023-05-10 19:31:29,505 - INFO - Program started
+2023-05-10 19:31:31,190 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:31:31,191 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:31:31,193 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:31:31,193 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:31:31,195 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:31:31,390 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:31:31,392 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:31:31,416 - INFO - Performing data analysis
+2023-05-10 19:31:31,422 - INFO - Collecting news articles from online resources...
+2023-05-10 19:31:32,187 - INFO - Performing sentiment analysis
+2023-05-10 19:31:32,187 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:31:32,187 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:31:32,187 - INFO - Visualizing data
+2023-05-10 19:31:34,737 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:32:10,941 - INFO - Mean squared error on test set: 1.4043527334185354e-08
+2023-05-10 19:32:11,653 - INFO - Applying risk management strategies
+2023-05-10 19:32:11,654 - ERROR - An error occurred: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 176, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+2023-05-10 19:33:08,047 - INFO - Program started
+2023-05-10 19:33:09,626 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:33:09,626 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:33:09,627 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:33:09,628 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:33:09,628 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:33:09,820 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:33:09,823 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:33:09,867 - INFO - Performing data analysis
+2023-05-10 19:33:09,890 - INFO - Collecting news articles from online resources...
+2023-05-10 19:33:10,638 - INFO - Performing sentiment analysis
+2023-05-10 19:33:10,638 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:33:10,638 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:33:10,638 - INFO - Visualizing data
+2023-05-10 19:33:13,003 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:33:47,407 - INFO - Mean squared error on test set: 3.8236663253262086e-09
+2023-05-10 19:33:48,138 - INFO - Applying risk management strategies
+2023-05-10 19:33:48,143 - ERROR - An error occurred: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 177, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+2023-05-10 19:34:45,776 - INFO - Program started
+2023-05-10 19:34:48,383 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:34:48,383 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:34:48,385 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:34:48,386 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:34:48,387 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:34:48,618 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:34:48,622 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:34:48,646 - INFO - Performing data analysis
+2023-05-10 19:34:48,654 - INFO - Collecting news articles from online resources...
+2023-05-10 19:34:49,380 - INFO - Performing sentiment analysis
+2023-05-10 19:34:49,381 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:34:49,381 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:34:49,381 - INFO - Visualizing data
+2023-05-10 19:34:52,067 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:40:05,817 - INFO - Mean squared error on test set: 1.7482627394791584e-10
+2023-05-10 19:40:06,645 - INFO - Applying risk management strategies
+2023-05-10 19:40:06,647 - ERROR - An error occurred: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 177, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+2023-05-10 19:42:56,136 - INFO - Program started
+2023-05-10 19:43:00,188 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:43:00,188 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:43:00,190 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:43:00,190 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:43:00,191 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:43:00,386 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:43:00,389 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:43:00,413 - INFO - Performing data analysis
+2023-05-10 19:43:00,420 - INFO - Collecting news articles from online resources...
+2023-05-10 19:43:01,203 - INFO - Performing sentiment analysis
+2023-05-10 19:43:01,204 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:43:01,204 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:43:01,204 - INFO - Visualizing data
+2023-05-10 19:43:03,720 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:43:34,436 - INFO - Mean squared error on test set: 1.6687022714767526e-10
+2023-05-10 19:43:35,187 - INFO - Applying risk management strategies
+2023-05-10 19:43:35,188 - ERROR - An error occurred: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 177, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got an unexpected keyword argument 'limit_percent'
+2023-05-10 19:56:35,174 - INFO - Program started
+2023-05-10 19:56:36,581 - INFO - Selected ticker: SHIB-USD
+2023-05-10 19:56:36,581 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 19:56:36,582 - INFO - Collecting crypto data from online resources...
+2023-05-10 19:56:36,583 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 19:56:36,584 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 19:56:36,760 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 19:56:36,762 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 19:56:36,783 - INFO - Performing data analysis
+2023-05-10 19:56:36,793 - INFO - Collecting news articles from online resources...
+2023-05-10 19:56:37,668 - INFO - Performing sentiment analysis
+2023-05-10 19:56:37,668 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 19:56:37,668 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 19:56:37,669 - INFO - Visualizing data
+2023-05-10 19:56:40,163 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 19:57:10,387 - INFO - Mean squared error on test set: 3.066530164292636e-10
+2023-05-10 19:57:11,153 - INFO - Applying risk management strategies
+2023-05-10 19:57:11,154 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 175, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 20:03:47,223 - INFO - Program started
+2023-05-10 20:03:50,549 - INFO - Selected ticker: SHIB-USD
+2023-05-10 20:03:50,549 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 20:03:50,550 - INFO - Collecting crypto data from online resources...
+2023-05-10 20:03:50,550 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 20:03:50,551 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 20:03:50,740 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 20:03:50,742 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 20:03:50,767 - INFO - Performing data analysis
+2023-05-10 20:03:50,772 - INFO - Collecting news articles from online resources...
+2023-05-10 20:03:51,584 - INFO - Performing sentiment analysis
+2023-05-10 20:03:51,585 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 20:03:51,585 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 20:03:51,586 - INFO - Visualizing data
+2023-05-10 20:03:53,888 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 20:04:22,832 - INFO - Mean squared error on test set: 4.797138162559724e-10
+2023-05-10 20:04:23,551 - INFO - Applying risk management strategies
+2023-05-10 20:04:23,552 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 176, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 20:05:21,934 - INFO - Program started
+2023-05-10 20:05:24,279 - INFO - Selected ticker: SHIB-USD
+2023-05-10 20:05:24,279 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 20:05:24,280 - INFO - Collecting crypto data from online resources...
+2023-05-10 20:05:24,280 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 20:05:24,282 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 20:05:24,491 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 20:05:24,493 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 20:05:24,515 - INFO - Performing data analysis
+2023-05-10 20:05:24,524 - INFO - Collecting news articles from online resources...
+2023-05-10 20:05:25,228 - INFO - Performing sentiment analysis
+2023-05-10 20:05:25,228 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 20:05:25,228 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 20:05:25,228 - INFO - Visualizing data
+2023-05-10 20:05:27,702 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 20:05:59,237 - INFO - Mean squared error on test set: 2.3432204820988686e-10
+2023-05-10 20:06:00,112 - INFO - Applying risk management strategies
+2023-05-10 20:06:00,114 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 177, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
