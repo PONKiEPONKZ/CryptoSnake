@@ -13,23 +13,11 @@ def get_news_data():
     if response.status_code == 200:
         data = response.json()
         if data['status'] == 'success' and data['totalResults'] > 0:
-            return data['results']
+            # Filter out articles without a title or description
+            results = [article for article in data['results'] if article.get('title') and article.get('description')]
+            return results
               
         else:
             print("No news data found.\n")
     else:
         print("Error fetching news data.\n")
-
-def get_news_sentiment():
-    news_data = get_news_data()
-    
-    if news_data:
-        print("News sentiment data:")
-        for article in news_data:
-            # do sentiment analysis on article['title'] and article['description']
-            # and print the sentiment score
-            print(article['title'])
-            print(article['description'])
-            print("Sentiment score: x\n")
-    else:
-        print("No news data found.\n")

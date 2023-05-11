@@ -74,6 +74,7 @@ def retrieve_ticker(config):
     img.save(image_path)
 
     # Set the selected ticker and image url in config
+
     config.set_selected_ticker(selected_ticker_value)
     config.set_selected_ticker_image_url("selected_ticker_image.png")
     logger.log_info(f"Selected ticker: {config.selected_ticker}")

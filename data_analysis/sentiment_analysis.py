@@ -22,26 +22,15 @@ class SentimentalAnalysis:
         selected_ticker = config.selected_ticker
         try:
             for article in news_data:
-                if (
-                    article is not None
-                    and (
-                        "title" in article 
-                        and (
-                            selected_ticker.upper() in article["title"] 
-                            or selected_ticker.upper().replace("-USD", "") in article["title"]
-                        )
-                    )
-                    or (
-                        "description" in article 
-                        and (
-                            selected_ticker.upper() in article["description"] 
-                            or selected_ticker.upper().replace("-USD", "") in article["description"]
-                        )
-                    )
-                ):
-                    sentiment_score += self.get_sentiment_score(article["title"])
-                    sentiment_score += self.get_sentiment_score(article["description"])
-            return sentiment_score
+                if article is not None and "title" in article:
+                    if selected_ticker.upper() in article["title"] or selected_ticker.upper().replace("-USD", "") in article["title"]:
+                        sentiment_score += self.get_sentiment_score(article["title"])
+                    try:
+                        if selected_ticker.upper() in article["description"] or selected_ticker.upper().replace("-USD", "") in article["description"]:
+                            sentiment_score += self.get_sentiment_score(article["description"])
+                    except KeyError:
+                        pass
         except Exception as e:
             self.logger.log_error(f"Error getting news sentiment score: {str(e)}")
             return 0
+        return sentiment_score

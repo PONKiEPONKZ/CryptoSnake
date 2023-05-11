@@ -128,24 +128,35 @@ def main():
         model = LSTMModel()
 
         # Train the model using the scaled training data
+        print()
         print("Training the LSTM model...")
         model.train(X_train_scaled_np)
 
         # Make predictions using the scaled test data
+        print()
         print("Making predictions on the scaled data")
+        print()
         predictions_scaled = model.predict(X_test_scaled_np)
+        print("predictions_scaled shape:", predictions_scaled.shape) # <-- add this line to print the shape of predictions_scaled
 
         # Unscale the predicted values
-        print("Unscaling")
-        predictions = MLScaler.unscale_data(predictions_scaled)
+        print()
+        print("Unscaling the data")
+        predictions_unscaled = scaler.unscale_data(predictions_scaled.reshape(-1, 1))
+
+        #predictions_unscaled = scaler.unscale_data(predictions_scaled)
 
         # Convert DataFrames to numpy arrays
         #X_test_np = np.array(X_test_scaled_np)
         #y_test_np = np.array(y_test_scaled_np)
 
         # Evaluate the model on the unscaled test set
+        print()
         print("Evaluating model...")
-        mse = model.evaluate(X_test_np, y_test_np)
+        #mse = model.evaluate(X_test_scaled_np)
+        # Evaluate the model on the test data
+        mse = model.evaluate(X_test_scaled_np, scaler.unscale_data(y_test))
+
 
         logger.log_info(f"Mean squared error on test set: {mse}")
         print(f"Mean squared error on test set: {mse}")
@@ -156,7 +167,7 @@ def main():
         date_range = pd.date_range(start=start_date, end=end_date, freq='D')
 
         # create a trace for the predicted values
-        predicted_trace = go.Scatter(x=date_range, y=predictions.flatten(), name='Predicted')
+        predicted_trace = go.Scatter(x=date_range, y=predictions_unscaled.flatten(), name='Predicted')
 
         # add the predicted trace to the figure data
         print("Generating charts...")
