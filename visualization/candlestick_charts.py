@@ -163,5 +163,5 @@ class CandlestickCharts:
         )
 
         # Show plot
-        fig.show()
+        #fig.show()
         return fig

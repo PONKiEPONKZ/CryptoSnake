@@ -1685,3 +1685,555 @@ Traceback (most recent call last):
   File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 177, in main
     stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
 TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 22:20:22,751 - INFO - Program started
+2023-05-10 22:20:27,078 - INFO - Selected ticker: SHIB-USD
+2023-05-10 22:20:27,078 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 22:20:27,078 - INFO - Collecting crypto data from online resources...
+2023-05-10 22:20:27,079 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 22:20:27,081 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 22:20:27,739 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 22:20:27,745 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 22:20:27,856 - INFO - Performing data analysis
+2023-05-10 22:20:27,944 - INFO - Collecting news articles from online resources...
+2023-05-10 22:20:28,932 - INFO - Performing sentiment analysis
+2023-05-10 22:20:29,122 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-10 22:20:29,122 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 22:20:29,122 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 22:20:29,123 - INFO - Visualizing data
+2023-05-10 22:21:01,568 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 22:23:10,598 - INFO - Program started
+2023-05-10 22:23:17,129 - INFO - Selected ticker: SHIB-USD
+2023-05-10 22:23:17,129 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 22:23:17,130 - INFO - Collecting crypto data from online resources...
+2023-05-10 22:23:17,130 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 22:23:17,133 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 22:23:17,868 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 22:23:17,874 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 22:23:17,984 - INFO - Performing data analysis
+2023-05-10 22:23:18,065 - INFO - Collecting news articles from online resources...
+2023-05-10 22:23:18,823 - INFO - Performing sentiment analysis
+2023-05-10 22:23:19,019 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-10 22:23:19,019 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 22:23:19,020 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 22:23:19,020 - INFO - Visualizing data
+2023-05-10 22:23:32,807 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 22:24:52,284 - INFO - Mean squared error on test set: 1.577266844418291e-10
+2023-05-10 22:24:54,932 - INFO - Applying risk management strategies
+2023-05-10 22:24:54,938 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 177, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 22:25:35,695 - INFO - Program started
+2023-05-10 22:26:03,858 - INFO - Program started
+2023-05-10 22:26:10,439 - INFO - Selected ticker: SHIB-USD
+2023-05-10 22:26:10,440 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 22:26:10,440 - INFO - Collecting crypto data from online resources...
+2023-05-10 22:26:10,440 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 22:26:10,443 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 22:26:10,720 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 22:26:10,725 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 22:26:10,806 - INFO - Performing data analysis
+2023-05-10 22:26:10,828 - INFO - Collecting news articles from online resources...
+2023-05-10 22:26:11,617 - INFO - Performing sentiment analysis
+2023-05-10 22:26:11,800 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-10 22:26:11,800 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 22:26:11,801 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 22:26:11,801 - INFO - Visualizing data
+2023-05-10 22:26:18,866 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 22:27:23,075 - INFO - Mean squared error on test set: 3.365597231842035e-10
+2023-05-10 22:27:24,748 - INFO - Applying risk management strategies
+2023-05-10 22:27:24,751 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 177, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 22:37:15,884 - INFO - Program started
+2023-05-10 22:38:07,681 - INFO - Program started
+2023-05-10 22:38:13,770 - INFO - Selected ticker: SHIB-USD
+2023-05-10 22:38:13,771 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 22:38:13,771 - INFO - Collecting crypto data from online resources...
+2023-05-10 22:38:13,771 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 22:38:13,774 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 22:38:14,076 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 22:38:14,082 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 22:38:14,161 - INFO - Performing data analysis
+2023-05-10 22:38:14,178 - INFO - Collecting news articles from online resources...
+2023-05-10 22:38:14,986 - INFO - Performing sentiment analysis
+2023-05-10 22:38:15,153 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-10 22:38:15,153 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 22:38:15,153 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 22:38:15,154 - INFO - Visualizing data
+2023-05-10 22:38:20,734 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 22:39:20,605 - INFO - Mean squared error on test set: 1.5330884525928582e-10
+2023-05-10 22:39:24,369 - INFO - Applying risk management strategies
+2023-05-10 22:39:24,409 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 175, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 22:41:43,792 - INFO - Program started
+2023-05-10 22:42:19,477 - INFO - Selected ticker: SHIB-USD
+2023-05-10 22:42:19,478 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 22:42:19,478 - INFO - Collecting crypto data from online resources...
+2023-05-10 22:42:19,479 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 22:42:19,481 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 22:42:19,762 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 22:42:19,768 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 22:42:19,844 - INFO - Performing data analysis
+2023-05-10 22:42:19,873 - INFO - Collecting news articles from online resources...
+2023-05-10 22:42:21,084 - INFO - Performing sentiment analysis
+2023-05-10 22:42:21,281 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-10 22:42:21,282 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 22:42:21,282 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 22:42:21,282 - INFO - Visualizing data
+2023-05-10 22:42:26,781 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 22:43:28,783 - INFO - Mean squared error on test set: 1.4869098036266935e-10
+2023-05-10 22:43:33,484 - INFO - Applying risk management strategies
+2023-05-10 22:43:33,486 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 175, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 22:47:49,802 - INFO - Program started
+2023-05-10 22:49:24,734 - INFO - Selected ticker: DOGE-USD
+2023-05-10 22:49:24,735 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 22:49:24,735 - INFO - Collecting crypto data from online resources...
+2023-05-10 22:49:24,735 - INFO - Retrieving historical data for DOGE-USD
+2023-05-10 22:49:24,738 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 22:49:25,030 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 22:49:25,034 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 22:49:25,100 - INFO - Performing data analysis
+2023-05-10 22:49:25,123 - INFO - Collecting news articles from online resources...
+2023-05-10 22:49:25,858 - INFO - Performing sentiment analysis
+2023-05-10 22:49:26,051 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 22:49:26,051 - INFO - News sentiment score for DOGE-USD is 0
+2023-05-10 22:49:26,051 - INFO - Visualizing data
+2023-05-10 22:49:31,336 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 22:51:53,054 - INFO - Mean squared error on test set: 0.012388722544828597
+2023-05-10 22:51:59,759 - INFO - Applying risk management strategies
+2023-05-10 22:51:59,763 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 175, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 23:09:28,994 - INFO - Program started
+2023-05-10 23:09:33,259 - INFO - Selected ticker: LTC-USD
+2023-05-10 23:09:33,259 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 23:09:33,259 - INFO - Collecting crypto data from online resources...
+2023-05-10 23:09:33,260 - INFO - Retrieving historical data for LTC-USD
+2023-05-10 23:09:33,261 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 23:09:34,141 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 23:09:34,146 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 23:09:34,210 - INFO - Performing data analysis
+2023-05-10 23:09:34,294 - INFO - Collecting news articles from online resources...
+2023-05-10 23:09:35,068 - INFO - Performing sentiment analysis
+2023-05-10 23:09:35,070 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 23:09:35,070 - INFO - News sentiment score for LTC-USD is 0
+2023-05-10 23:09:35,071 - INFO - Visualizing data
+2023-05-10 23:09:50,036 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 23:13:24,797 - INFO - Mean squared error on test set: 4027.488987745549
+2023-05-10 23:13:36,543 - INFO - Applying risk management strategies
+2023-05-10 23:13:36,545 - ERROR - An error occurred: stop_limit_order() got multiple values for argument 'limit_percent'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 175, in main
+    stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+TypeError: stop_limit_order() got multiple values for argument 'limit_percent'
+2023-05-10 23:48:32,549 - INFO - Program started
+2023-05-10 23:48:35,869 - INFO - Selected ticker: SHIB-USD
+2023-05-10 23:48:35,870 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-10 23:48:35,870 - INFO - Collecting crypto data from online resources...
+2023-05-10 23:48:35,870 - INFO - Retrieving historical data for SHIB-USD
+2023-05-10 23:48:35,873 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-10 23:48:36,780 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-10 23:48:36,786 - INFO - Filtered data for {config.selected_ticker}
+2023-05-10 23:48:36,870 - INFO - Performing data analysis
+2023-05-10 23:48:36,943 - INFO - Collecting news articles from online resources...
+2023-05-10 23:48:37,715 - INFO - Performing sentiment analysis
+2023-05-10 23:48:37,903 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-10 23:48:37,904 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-10 23:48:37,904 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-10 23:48:37,904 - INFO - Visualizing data
+2023-05-10 23:48:48,075 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-10 23:48:48,124 - INFO - Scaling the data using the training data
+2023-05-10 23:48:48,125 - ERROR - An error occurred: name 'scale_data' is not defined
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 115, in main
+    X_train_scaled, X_test_scaled = scale_data(X_train, X_test)
+NameError: name 'scale_data' is not defined
+2023-05-11 00:01:38,646 - INFO - Program started
+2023-05-11 00:06:57,054 - INFO - Program started
+2023-05-11 00:07:01,235 - INFO - Selected ticker: SHIB-USD
+2023-05-11 00:07:01,235 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 00:07:01,235 - INFO - Collecting crypto data from online resources...
+2023-05-11 00:07:01,236 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 00:07:01,238 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 00:07:01,925 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 00:07:01,931 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 00:07:02,011 - INFO - Performing data analysis
+2023-05-11 00:07:02,097 - INFO - Collecting news articles from online resources...
+2023-05-11 00:07:03,791 - INFO - Performing sentiment analysis
+2023-05-11 00:07:04,001 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 00:07:04,001 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 00:07:04,002 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 00:07:04,002 - INFO - Visualizing data
+2023-05-11 00:07:12,656 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 00:07:12,708 - INFO - Scaling the data using the training data
+2023-05-11 00:07:12,709 - ERROR - An error occurred: scale_data() missing 1 required positional argument: 'X_test'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 115, in main
+    X_train_scaled, X_test_scaled = MLScaler.scale_data(X_train, X_test)
+TypeError: scale_data() missing 1 required positional argument: 'X_test'
+2023-05-11 00:15:18,486 - INFO - Program started
+2023-05-11 00:15:26,778 - INFO - Selected ticker: SHIB-USD
+2023-05-11 00:15:26,778 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 00:15:26,779 - INFO - Collecting crypto data from online resources...
+2023-05-11 00:15:26,779 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 00:15:26,782 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 00:15:27,135 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 00:15:27,140 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 00:15:27,214 - INFO - Performing data analysis
+2023-05-11 00:15:27,233 - INFO - Collecting news articles from online resources...
+2023-05-11 00:15:27,994 - INFO - Performing sentiment analysis
+2023-05-11 00:15:28,199 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 00:15:28,199 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 00:15:28,200 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 00:15:28,200 - INFO - Visualizing data
+2023-05-11 00:15:34,035 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 00:15:34,066 - INFO - Scaling the data using the training data
+2023-05-11 00:15:34,067 - ERROR - An error occurred: scale_data() missing 1 required positional argument: 'X_test'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 118, in main
+    X_train_scaled, X_test_scaled = MLScaler.scale_data(X_train, X_test)
+TypeError: scale_data() missing 1 required positional argument: 'X_test'
+2023-05-11 00:17:16,654 - INFO - Program started
+2023-05-11 00:17:21,129 - INFO - Selected ticker: SHIB-USD
+2023-05-11 00:17:21,130 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 00:17:21,130 - INFO - Collecting crypto data from online resources...
+2023-05-11 00:17:21,130 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 00:17:21,132 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 00:17:21,486 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 00:17:21,495 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 00:17:21,585 - INFO - Performing data analysis
+2023-05-11 00:17:21,600 - INFO - Collecting news articles from online resources...
+2023-05-11 00:17:22,394 - INFO - Performing sentiment analysis
+2023-05-11 00:17:22,660 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 00:17:22,661 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 00:17:22,661 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 00:17:22,661 - INFO - Visualizing data
+2023-05-11 00:17:30,856 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 00:17:30,868 - INFO - Scaling the data using the training data
+2023-05-11 00:17:30,913 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 124, in main
+    model.train(X_train_scaled)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 00:21:55,226 - INFO - Program started
+2023-05-11 00:22:02,747 - INFO - Selected ticker: SHIB-USD
+2023-05-11 00:22:02,747 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 00:22:02,747 - INFO - Collecting crypto data from online resources...
+2023-05-11 00:22:02,748 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 00:22:02,750 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 00:22:04,381 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 00:22:04,388 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 00:22:04,484 - INFO - Performing data analysis
+2023-05-11 00:22:04,649 - INFO - Collecting news articles from online resources...
+2023-05-11 00:22:05,602 - INFO - Performing sentiment analysis
+2023-05-11 00:22:05,852 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 00:22:05,853 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 00:22:05,853 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 00:22:05,853 - INFO - Visualizing data
+2023-05-11 00:22:29,825 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 00:22:29,940 - INFO - Scaling the data using the training data
+2023-05-11 00:22:30,093 - ERROR - An error occurred: 'numpy.ndarray' object has no attribute 'to_numpy'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 121, in main
+    X_train_scaled_np = X_train_scaled.to_numpy()
+AttributeError: 'numpy.ndarray' object has no attribute 'to_numpy'
+2023-05-11 00:24:27,436 - INFO - Program started
+2023-05-11 00:27:10,581 - INFO - Selected ticker: SHIB-USD
+2023-05-11 00:27:10,581 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 00:27:10,582 - INFO - Collecting crypto data from online resources...
+2023-05-11 00:27:10,582 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 00:27:10,584 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 00:27:39,354 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 00:27:39,359 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 00:27:39,928 - INFO - Performing data analysis
+2023-05-11 00:27:40,337 - INFO - Collecting news articles from online resources...
+2023-05-11 00:27:48,025 - INFO - Performing sentiment analysis
+2023-05-11 00:27:49,578 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 00:27:49,578 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 00:27:49,579 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 00:27:49,579 - INFO - Visualizing data
+2023-05-11 00:35:13,609 - INFO - Program started
+2023-05-11 00:35:21,149 - INFO - Selected ticker: SHIB-USD
+2023-05-11 00:35:21,149 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 00:35:21,149 - INFO - Collecting crypto data from online resources...
+2023-05-11 00:35:21,150 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 00:35:21,152 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 00:35:21,461 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 00:35:21,466 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 00:35:21,570 - INFO - Performing data analysis
+2023-05-11 00:35:21,586 - INFO - Collecting news articles from online resources...
+2023-05-11 00:35:22,456 - INFO - Performing sentiment analysis
+2023-05-11 00:35:22,674 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 00:35:22,675 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 00:35:22,675 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 00:35:22,675 - INFO - Visualizing data
+2023-05-11 00:35:54,707 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 00:35:54,720 - INFO - Scaling the data using the training data
+2023-05-11 00:35:54,759 - ERROR - An error occurred: 'numpy.ndarray' object has no attribute 'to_numpy'
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 121, in main
+    X_train_scaled_np = X_train_scaled.to_numpy()
+AttributeError: 'numpy.ndarray' object has no attribute 'to_numpy'
+2023-05-11 00:41:58,273 - INFO - Program started
+2023-05-11 00:42:09,010 - INFO - Selected ticker: SHIB-USD
+2023-05-11 00:42:09,010 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 00:42:09,011 - INFO - Collecting crypto data from online resources...
+2023-05-11 00:42:09,011 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 00:42:09,013 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 00:42:10,061 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 00:42:10,067 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 00:42:10,194 - INFO - Performing data analysis
+2023-05-11 00:42:10,335 - INFO - Collecting news articles from online resources...
+2023-05-11 00:42:11,137 - INFO - Performing sentiment analysis
+2023-05-11 00:42:11,351 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 00:42:11,351 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 00:42:11,351 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 00:42:17,933 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 00:42:17,960 - INFO - Scaling the data using the training data
+2023-05-11 00:42:18,003 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 01:32:50,170 - INFO - Program started
+2023-05-11 01:33:29,151 - INFO - Selected ticker: SHIB-USD
+2023-05-11 01:33:29,152 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 01:33:29,152 - INFO - Collecting crypto data from online resources...
+2023-05-11 01:33:29,152 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 01:33:29,154 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 01:33:30,014 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 01:33:30,020 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 01:33:30,132 - INFO - Performing data analysis
+2023-05-11 01:33:30,211 - INFO - Collecting news articles from online resources...
+2023-05-11 01:33:31,142 - INFO - Performing sentiment analysis
+2023-05-11 01:33:31,333 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 01:33:31,333 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 01:33:31,333 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 01:33:38,006 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 01:33:38,055 - INFO - Scaling the data using the training data
+2023-05-11 01:33:38,074 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 01:35:20,839 - INFO - Program started
+2023-05-11 01:36:03,280 - INFO - Selected ticker: SHIB-USD
+2023-05-11 01:36:03,280 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 01:36:03,281 - INFO - Collecting crypto data from online resources...
+2023-05-11 01:36:03,281 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 01:36:03,283 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 01:36:03,543 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 01:36:03,549 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 01:36:03,624 - INFO - Performing data analysis
+2023-05-11 01:36:03,657 - INFO - Collecting news articles from online resources...
+2023-05-11 01:36:04,390 - INFO - Performing sentiment analysis
+2023-05-11 01:36:04,572 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 01:36:04,572 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 01:36:04,572 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 01:36:07,447 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 01:36:07,454 - INFO - Scaling the data using the training data
+2023-05-11 01:36:07,473 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 01:38:11,240 - INFO - Program started
+2023-05-11 01:38:45,633 - INFO - Selected ticker: SHIB-USD
+2023-05-11 01:38:45,633 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 01:38:45,633 - INFO - Collecting crypto data from online resources...
+2023-05-11 01:38:45,634 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 01:38:45,637 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 01:38:45,956 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 01:38:45,962 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 01:38:46,044 - INFO - Performing data analysis
+2023-05-11 01:38:46,111 - INFO - Collecting news articles from online resources...
+2023-05-11 01:38:46,887 - INFO - Performing sentiment analysis
+2023-05-11 01:38:47,077 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 01:38:47,077 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 01:38:47,078 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 01:38:50,104 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 01:38:50,110 - INFO - Scaling the data using the training data
+2023-05-11 01:38:50,136 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 01:44:05,863 - INFO - Program started
+2023-05-11 01:44:40,003 - INFO - Selected ticker: SHIB-USD
+2023-05-11 01:44:40,003 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 01:44:40,004 - INFO - Collecting crypto data from online resources...
+2023-05-11 01:44:40,004 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 01:44:40,007 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 01:44:40,254 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 01:44:40,265 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 01:44:40,346 - INFO - Performing data analysis
+2023-05-11 01:44:40,367 - INFO - Collecting news articles from online resources...
+2023-05-11 01:44:41,280 - INFO - Performing sentiment analysis
+2023-05-11 01:44:41,468 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 01:44:41,469 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 01:44:41,469 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 01:44:45,015 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 01:44:45,023 - INFO - Scaling the data using the training data
+2023-05-11 01:44:45,052 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 01:48:51,614 - INFO - Program started
+2023-05-11 01:49:09,281 - INFO - Selected ticker: SHIB-USD
+2023-05-11 01:49:09,281 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 01:49:09,281 - INFO - Collecting crypto data from online resources...
+2023-05-11 01:49:09,282 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 01:49:09,284 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 01:49:09,598 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 01:49:09,604 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 01:49:09,699 - INFO - Performing data analysis
+2023-05-11 01:49:09,718 - INFO - Collecting news articles from online resources...
+2023-05-11 01:49:10,528 - INFO - Performing sentiment analysis
+2023-05-11 01:49:10,734 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 01:49:10,734 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 01:49:10,735 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 01:49:14,926 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 01:49:14,932 - INFO - Scaling the data using the training data
+2023-05-11 01:49:14,952 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 01:54:29,767 - INFO - Program started
+2023-05-11 01:54:57,031 - INFO - Selected ticker: SHIB-USD
+2023-05-11 01:54:57,032 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 01:54:57,032 - INFO - Collecting crypto data from online resources...
+2023-05-11 01:54:57,032 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 01:54:57,034 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 01:54:57,351 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 01:54:57,357 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 01:54:57,447 - INFO - Performing data analysis
+2023-05-11 01:54:57,475 - INFO - Collecting news articles from online resources...
+2023-05-11 01:54:58,189 - INFO - Performing sentiment analysis
+2023-05-11 01:54:58,402 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 01:54:58,402 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 01:54:58,403 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 01:55:03,610 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 01:55:03,617 - INFO - Scaling the data using the training data
+2023-05-11 01:55:03,637 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 08:13:18,780 - INFO - Program started
+2023-05-11 08:13:24,188 - INFO - Selected ticker: SHIB-USD
+2023-05-11 08:13:24,188 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 08:13:24,189 - INFO - Collecting crypto data from online resources...
+2023-05-11 08:13:24,189 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 08:13:24,191 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 08:13:24,865 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 08:13:24,871 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 08:13:24,986 - INFO - Performing data analysis
+2023-05-11 08:13:25,078 - INFO - Collecting news articles from online resources...
+2023-05-11 08:13:26,080 - INFO - Performing sentiment analysis
+2023-05-11 08:13:26,256 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 08:13:26,259 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 08:13:26,260 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 08:13:31,670 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 08:13:31,708 - INFO - Scaling the data using the training data
+2023-05-11 08:13:31,729 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 09:10:59,527 - INFO - Program started
+2023-05-11 09:11:03,620 - INFO - Selected ticker: SHIB-USD
+2023-05-11 09:11:03,621 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 09:11:03,621 - INFO - Collecting crypto data from online resources...
+2023-05-11 09:11:03,621 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 09:11:03,624 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 09:11:03,919 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 09:11:03,928 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 09:11:04,031 - INFO - Performing data analysis
+2023-05-11 09:11:04,055 - INFO - Collecting news articles from online resources...
+2023-05-11 09:11:04,858 - INFO - Performing sentiment analysis
+2023-05-11 09:11:05,027 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 09:11:05,030 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 09:11:05,030 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 09:11:47,866 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 09:11:47,873 - INFO - Scaling the data using the training data
+2023-05-11 09:11:47,895 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 09:12:27,500 - INFO - Program started
+2023-05-11 09:16:31,102 - INFO - Program started
+2023-05-11 09:16:34,556 - INFO - Selected ticker: SHIB-USD
+2023-05-11 09:16:34,556 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 09:16:34,556 - INFO - Collecting crypto data from online resources...
+2023-05-11 09:16:34,557 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 09:16:34,559 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 09:16:35,608 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 09:16:35,614 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 09:16:35,690 - INFO - Performing data analysis
+2023-05-11 09:16:35,771 - INFO - Collecting news articles from online resources...
+2023-05-11 09:16:36,716 - INFO - Performing sentiment analysis
+2023-05-11 09:16:36,986 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 09:16:36,989 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 09:16:36,989 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 09:16:43,944 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 09:16:43,951 - INFO - Scaling the data using the training data
+2023-05-11 09:16:43,970 - ERROR - An error occurred: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+Traceback (most recent call last):
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/main.py", line 130, in main
+    model.train(X_train_scaled_np)
+  File "/home/ponkie/Documents/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 15, in train
+    data = np.array(data[["Open", "High", "Low"]])
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2023-05-11 09:22:45,914 - INFO - Program started
+2023-05-11 09:24:21,168 - INFO - Program started
+2023-05-11 09:24:24,309 - INFO - Selected ticker: SHIB-USD
+2023-05-11 09:24:24,309 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-11 09:24:24,310 - INFO - Collecting crypto data from online resources...
+2023-05-11 09:24:24,310 - INFO - Retrieving historical data for SHIB-USD
+2023-05-11 09:24:24,312 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-11 09:24:25,276 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-11 09:24:25,282 - INFO - Filtered data for {config.selected_ticker}
+2023-05-11 09:24:25,419 - INFO - Performing data analysis
+2023-05-11 09:24:25,522 - INFO - Collecting news articles from online resources...
+2023-05-11 09:24:26,251 - INFO - Performing sentiment analysis
+2023-05-11 09:24:26,441 - ERROR - Error getting sentiment score: The `text` argument passed to `__init__(text)` must be a string, not <class 'NoneType'>
+2023-05-11 09:24:26,444 - ERROR - Error getting news sentiment score: argument of type 'NoneType' is not iterable
+2023-05-11 09:24:26,445 - INFO - News sentiment score for SHIB-USD is 0
+2023-05-11 09:24:53,624 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-11 09:25:33,203 - INFO - Scaling the data using the training data

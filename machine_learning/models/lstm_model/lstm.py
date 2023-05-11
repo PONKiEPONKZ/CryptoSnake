@@ -33,9 +33,9 @@ class LSTMModel:
         for i in range(len(data_array)-look_back):
             x = data_array[i:i+look_back]
             x = x.reshape((1, look_back, data_array.shape[1]))
-            prediction = self.model.predict(x, verbose=1)
+            prediction = self.model.predict(x, verbose=2)
             predictions.append(prediction[0])
-        return np.array(predictions)
+        return np.array(predictions_scaled)
 
     def evaluate(self, data, labels, look_back=1):
     # function to evaluate the performance of the LSTM model on the given data and labels
@@ -52,7 +52,7 @@ class LSTMModel:
         for i in range(len(data_array)-look_back):
             x = data_array[i:i+look_back]
             x = x.reshape((1, look_back, data_array.shape[1]))
-            prediction = self.model.predict(x, verbose=1)
+            prediction = self.model.predict(x, verbose=2)
             predictions.append(prediction[0])
         mse = ((np.array(predictions) - labels_array[look_back:])**2).mean()
         return mse

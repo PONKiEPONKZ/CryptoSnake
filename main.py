@@ -11,6 +11,7 @@ from risk_management.stop_limit import stop_limit_order
 from risk_management.stop_loss import stop_loss_order
 from machine_learning.models.lstm_model.lstm import LSTMModel
 from machine_learning.prep.ml_prep import prepare_data
+from machine_learning.prep.ml_scaler import MLScaler
 from machine_learning.models.random_forest.random_forest import RandomForestModel
 from machine_learning.models.gru.gru import GRUModel
 from machine_learning.models.regression.regression import RegressionModel
@@ -23,7 +24,6 @@ from data_collection.social_media_data import get_twitter_data
 from data_collection.news_data import get_news_data
 from data_collection.crypto_data import get_crypto_data
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
@@ -90,9 +90,10 @@ def main():
         fundamental_analysis_results = FundamentalAnalysis()
 
         # Visualize collected data
-        logger.log_info("Visualizing data")
-        print("Generating chart...")
+        #logger.log_info("Visualizing data")
+        #print("Generating chart...")
 
+        # Creating candlestick chart
         crypto_data_df = pd.DataFrame(data=crypto_data, columns=[
                                       "Open", "High", "Low", "Close", "Volume"])
         candlestick_charts = CandlestickCharts()
@@ -106,75 +107,72 @@ def main():
         #else:
         #    logger.log_warning("xaxis not found in figure layout")
         #fig = trend_lines.plot_trend_lines(crypto_data, candlestick_charts)
-
         # Prepare data for machine learning and split the crypto data into features (X) and target (y)
         logger.log_info("Splitting the crypto data into features (X) and target (y)")
-        X_train, X_test, y_train, y_test = prepare_data(crypto_data_df)
+        X_train, X_test, y_train, y_test = prepare_data(crypto_data)
 
-        # Train the neural network model
-        #trained_neural_network_model = NeuralNetwork(
-        #    input_size=X_train.shape[1], output_size=1
-        #)
-        #trained_neural_network_model.train(X_train, y_train)
+        # create an instance of the MLScaler class
+        scaler = MLScaler()
 
-        # Predict on the trained neural network test data
-        #y_pred = trained_neural_network_model.predict(X_test)
+        # Scale the data using the training data
+        logger.log_info("Scaling the data using the training data")
+        X_train_scaled, X_test_scaled = scaler.scale_data(X_train, X_test)
 
-        # Create a new trace for the predicted values
-        #trace_pred = go.Scatter(
-        #x=X_test.index, y=y_pred.flatten(), name='Predicted')
+        # Convert DataFrames to numpy arrays
+        X_train_scaled_np = np.array(X_train_scaled)
+        X_test_scaled_np = np.array(X_test_scaled)
+        print("X_train_scaled_np shape:", X_train_scaled_np.shape)
+        print("X_test_scaled_np shape:", X_test_scaled_np.shape)
 
-        # Add the new trace to the existing fig object
-        #fig.add_trace(trace_pred)
-
-        # Update the figure layout and show the chart
-        #fig.update_layout(title='My Chart with Predicted Values')
-        #fig.show()
-
-        
-        
         # Create an instance of LSTM model
         model = LSTMModel()
 
-        # Train the model using the training data
-        model.train(X_train)
+        # Train the model using the scaled training data
+        print("Training the LSTM model...")
+        model.train(X_train_scaled_np)
 
-        # Make predictions using the test data
-        predictions = model.predict(X_test)
-        
+        # Make predictions using the scaled test data
+        print("Making predictions on the scaled data")
+        predictions_scaled = model.predict(X_test_scaled_np)
+
+        # Unscale the predicted values
+        print("Unscaling")
+        predictions = MLScaler.unscale_data(predictions_scaled)
+
         # Convert DataFrames to numpy arrays
-        X_test_np = X_test.to_numpy()
-        y_test_np = y_test.to_numpy()
+        #X_test_np = np.array(X_test_scaled_np)
+        #y_test_np = np.array(y_test_scaled_np)
 
-        # Evaluate the model on the test set
+        # Evaluate the model on the unscaled test set
+        print("Evaluating model...")
         mse = model.evaluate(X_test_np, y_test_np)
 
         logger.log_info(f"Mean squared error on test set: {mse}")
         print(f"Mean squared error on test set: {mse}")
-        
+
         # create a range of dates for the predicted values
         start_date = crypto_data.index[0]
         end_date = crypto_data.index[-1]
         date_range = pd.date_range(start=start_date, end=end_date, freq='D')
-        print(date_range)
-        
+
         # create a trace for the predicted values
         predicted_trace = go.Scatter(x=date_range, y=predictions.flatten(), name='Predicted')
-        print(date_range)
-        
+
         # add the predicted trace to the figure data
+        print("Generating charts...")
+        fig = go.Figure()
         fig.add_trace(predicted_trace)
-        fig.update_layout(title="LTSM Prediction")
+        fig.update_layout(title="LSTM Prediction")
         fig.show()
-        print('Added predicted trace to figure data')
 
         # Extractng last closing prices
         last_close_price = crypto_data.iloc[-1]['Close']
-        
+
         # Apply risk management strategies
+        print("Applying risk management strategies...")
         logger.log_info("Applying risk management strategies")
         stop_loss_order(crypto_data, config.stop_loss_threshold, last_close_price)
-        stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent = 2)
+        stop_limit_order(config.stop_limit_threshold, last_close_price, limit_percent=2)
         calculate_portfolio_allocation(crypto_data, config.portfolio_size)
 
         # Log results
@@ -183,8 +181,7 @@ def main():
         # Log the error
         logger.log_exception(f"An error occurred: {str(e)}")
 
-        # Exit with a non-zero exit code to indicate that an error occurred
-        sys.exit(1)
+        # Exit with a non-zero exit code to indicate that an error occur        sys.exit(1)
 
 
 if __name__ == "__main__":
