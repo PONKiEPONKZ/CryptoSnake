@@ -140,3 +140,119 @@ Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
 2023-05-15 11:24:01,126 - INFO - News sentiment score for WBTC-USD is 0
 2023-05-15 11:24:03,132 - INFO - Splitting the crypto data into features (X) and target (y)
 2023-05-15 11:24:03,144 - INFO - Scaling the data using the training data
+2023-05-15 11:35:46,207 - INFO - Program started
+2023-05-15 11:35:55,034 - INFO - Selected ticker: SHIB-USD
+2023-05-15 11:35:55,035 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 11:35:55,035 - INFO - Collecting crypto data from online resources...
+2023-05-15 11:35:55,035 - INFO - Retrieving historical data for SHIB-USD
+2023-05-15 11:35:55,035 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 11:35:55,249 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 11:35:55,251 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 11:35:55,267 - INFO - Performing data analysis
+2023-05-15 11:35:55,273 - INFO - Collecting news articles from online resources...
+2023-05-15 11:35:56,018 - INFO - Performing sentiment analysis
+2023-05-15 11:35:56,067 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-15 11:35:57,363 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 11:35:57,376 - INFO - Scaling the data using the training data
+2023-05-15 11:36:35,712 - ERROR - An error occurred: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_56972]
+Traceback (most recent call last):
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/main.py", line 132, in main
+    mse, _ = lstm_model.evaluate(X_test_scaled, predictions_unscaled)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 54, in evaluate
+    prediction = self.model.predict(x, verbose=0)
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 52, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_56972]
+2023-05-15 11:37:01,123 - INFO - Program started
+2023-05-15 11:37:22,658 - INFO - Program started
+2023-05-15 11:38:08,599 - INFO - Selected ticker: BUSD-USD
+2023-05-15 11:38:08,599 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 11:38:08,599 - INFO - Collecting crypto data from online resources...
+2023-05-15 11:38:08,599 - INFO - Retrieving historical data for BUSD-USD
+2023-05-15 11:38:08,600 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 11:38:08,958 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 11:38:08,960 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 11:38:08,976 - INFO - Performing data analysis
+2023-05-15 11:38:08,980 - INFO - Collecting news articles from online resources...
+2023-05-15 11:38:09,777 - INFO - Performing sentiment analysis
+2023-05-15 11:38:09,828 - INFO - News sentiment score for BUSD-USD is 0.0
+2023-05-15 11:38:11,582 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 11:38:11,596 - INFO - Scaling the data using the training data
+2023-05-15 11:39:06,992 - ERROR - An error occurred: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_85102]
+Traceback (most recent call last):
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/main.py", line 132, in main
+    mse, _ = lstm_model.evaluate(X_test_scaled, predictions_unscaled)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 54, in evaluate
+    prediction = self.model.predict(x, verbose=0)
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 52, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_85102]
+2023-05-15 11:41:28,544 - INFO - Program started
+2023-05-15 11:42:06,368 - INFO - Selected ticker: SHIB-USD
+2023-05-15 11:42:06,368 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 11:42:06,369 - INFO - Collecting crypto data from online resources...
+2023-05-15 11:42:06,369 - INFO - Retrieving historical data for SHIB-USD
+2023-05-15 11:42:06,369 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 11:42:06,574 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 11:42:06,575 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 11:42:06,592 - INFO - Performing data analysis
+2023-05-15 11:42:06,597 - INFO - Collecting news articles from online resources...
+2023-05-15 11:42:07,209 - INFO - Performing sentiment analysis
+2023-05-15 11:42:07,259 - INFO - News sentiment score for SHIB-USD is 0.0
+2023-05-15 11:42:08,512 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 11:42:08,525 - INFO - Scaling the data using the training data
+2023-05-15 11:42:48,858 - ERROR - An error occurred: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_56972]
+Traceback (most recent call last):
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/main.py", line 133, in main
+    mse, _ = lstm_model.evaluate(X_test_scaled, predictions_unscaled)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 54, in evaluate
+    prediction = self.model.predict(x, verbose=0)
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 52, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_56972]
+2023-05-15 11:42:58,040 - INFO - Program started
+2023-05-15 11:43:36,102 - INFO - Program started
+2023-05-15 11:43:39,654 - INFO - Selected ticker: ETC-USD
+2023-05-15 11:43:39,654 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 11:43:39,654 - INFO - Collecting crypto data from online resources...
+2023-05-15 11:43:39,654 - INFO - Retrieving historical data for ETC-USD
+2023-05-15 11:43:39,655 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 11:43:39,925 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 11:43:39,927 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 11:43:39,943 - INFO - Performing data analysis
+2023-05-15 11:43:39,950 - INFO - Collecting news articles from online resources...
+2023-05-15 11:43:40,948 - INFO - Performing sentiment analysis
+2023-05-15 11:43:40,948 - INFO - News sentiment score for ETC-USD is 0
+2023-05-15 11:43:43,277 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 11:43:43,294 - INFO - Scaling the data using the training data
+2023-05-15 11:45:17,635 - INFO - Program started

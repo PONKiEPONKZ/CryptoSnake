@@ -20,6 +20,6 @@ class Logger:
 
     def log_debug(self, message):
         logging.debug(message)
-        
+
     def log_exception(self, message):
         logging.exception(message)
