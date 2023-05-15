@@ -1,46 +1,142 @@
-2023-05-11 17:08:58,809 - INFO - Program started
-2023-05-11 17:09:01,492 - INFO - Selected ticker: SHIB-USD
-2023-05-11 17:09:01,493 - INFO - Selected ticker image URL: selected_ticker_image.png
-2023-05-11 17:09:01,494 - INFO - Collecting crypto data from online resources...
-2023-05-11 17:09:01,495 - INFO - Retrieving historical data for SHIB-USD
-2023-05-11 17:09:01,495 - INFO - Retrieved data for {config.selected_ticker}
-2023-05-11 17:09:01,697 - INFO - Retrieved historical data for {config.selected_ticker}
-2023-05-11 17:09:01,700 - INFO - Filtered data for {config.selected_ticker}
-2023-05-11 17:09:01,725 - INFO - Performing data analysis
-2023-05-11 17:09:01,732 - INFO - Collecting news articles from online resources...
-2023-05-11 17:09:02,595 - INFO - Performing sentiment analysis
-2023-05-11 17:09:02,761 - INFO - News sentiment score for SHIB-USD is 0.0
-2023-05-11 17:09:04,370 - INFO - Splitting the crypto data into features (X) and target (y)
-2023-05-11 17:09:04,375 - INFO - Scaling the data using the training data
-2023-05-11 17:09:22,214 - ERROR - An error occurred: non-broadcastable output operand with shape (150,1) doesn't match the broadcast shape (150,4)
+2023-05-15 10:26:03,021 - INFO - Program started
+2023-05-15 10:26:06,765 - INFO - Selected ticker: STETH-USD
+2023-05-15 10:26:06,765 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 10:26:06,766 - INFO - Collecting crypto data from online resources...
+2023-05-15 10:26:06,766 - INFO - Retrieving historical data for STETH-USD
+2023-05-15 10:26:06,766 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 10:26:07,123 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 10:26:07,124 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 10:26:07,136 - INFO - Performing data analysis
+2023-05-15 10:26:07,141 - INFO - Collecting news articles from online resources...
+2023-05-15 10:26:07,638 - INFO - Performing sentiment analysis
+2023-05-15 10:26:07,639 - ERROR - Error getting news sentiment score: 'NoneType' object is not iterable
+2023-05-15 10:26:07,639 - INFO - News sentiment score for STETH-USD is 0
+2023-05-15 10:26:09,083 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 10:26:09,097 - INFO - Scaling the data using the training data
+2023-05-15 10:40:42,764 - INFO - Program started
+2023-05-15 10:40:45,180 - INFO - Selected ticker: ADA-USD
+2023-05-15 10:40:45,180 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 10:40:45,180 - INFO - Collecting crypto data from online resources...
+2023-05-15 10:40:45,181 - INFO - Retrieving historical data for ADA-USD
+2023-05-15 10:40:45,181 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 10:40:45,564 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 10:40:45,566 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 10:40:45,584 - INFO - Performing data analysis
+2023-05-15 10:40:45,589 - INFO - Collecting news articles from online resources...
+2023-05-15 10:40:46,487 - INFO - Performing sentiment analysis
+2023-05-15 10:40:46,534 - INFO - News sentiment score for ADA-USD is 0.0
+2023-05-15 10:40:48,944 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 10:40:48,957 - INFO - Scaling the data using the training data
+2023-05-15 10:41:59,908 - ERROR - An error occurred: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_120534]
 Traceback (most recent call last):
-  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 145, in main
-    predictions_unscaled = scaler.unscale_data(predictions_scaled.reshape(-1, 1))
-  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\machine_learning\prep\ml_scaler.py", line 25, in unscale_data
-    predictions_unscaled = self.scaler.inverse_transform(predictions_scaled)
-  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\.venv\lib\site-packages\sklearn\preprocessing\_data.py", line 1052, in inverse_transform
-    X *= self.scale_
-ValueError: non-broadcastable output operand with shape (150,1) doesn't match the broadcast shape (150,4)
-2023-05-11 17:11:19,375 - INFO - Program started
-2023-05-11 17:11:28,020 - INFO - Selected ticker: SHIB-USD
-2023-05-11 17:11:28,020 - INFO - Selected ticker image URL: selected_ticker_image.png
-2023-05-11 17:11:28,021 - INFO - Collecting crypto data from online resources...
-2023-05-11 17:11:28,022 - INFO - Retrieving historical data for SHIB-USD
-2023-05-11 17:11:28,023 - INFO - Retrieved data for {config.selected_ticker}
-2023-05-11 17:11:28,234 - INFO - Retrieved historical data for {config.selected_ticker}
-2023-05-11 17:11:28,236 - INFO - Filtered data for {config.selected_ticker}
-2023-05-11 17:11:28,262 - INFO - Performing data analysis
-2023-05-11 17:11:28,270 - INFO - Collecting news articles from online resources...
-2023-05-11 17:11:29,008 - INFO - Performing sentiment analysis
-2023-05-11 17:11:29,195 - INFO - News sentiment score for SHIB-USD is 0.15
-2023-05-11 17:11:30,870 - INFO - Splitting the crypto data into features (X) and target (y)
-2023-05-11 17:11:30,874 - INFO - Scaling the data using the training data
-2023-05-11 17:15:04,210 - ERROR - An error occurred: non-broadcastable output operand with shape (150,1) doesn't match the broadcast shape (150,4)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/main.py", line 148, in main
+    mse, _ = lstm_model.evaluate(X_test_scaled, predictions_unscaled)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 54, in evaluate
+    prediction = self.model.predict(x, verbose=0)
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 52, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_120534]
+2023-05-15 10:42:39,797 - ERROR - An error occurred: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_50925]
 Traceback (most recent call last):
-  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\main.py", line 145, in main
-    predictions_unscaled = scaler.unscale_data(predictions_scaled.reshape(-1, 1))
-  File "C:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\machine_learning\prep\ml_scaler.py", line 25, in unscale_data
-    predictions_unscaled = self.scaler.inverse_transform(predictions_scaled)
-  File "c:\Users\User\Documents\GitHub\CryptoSnake\CryptoSnake\.venv\lib\site-packages\sklearn\preprocessing\_data.py", line 1052, in inverse_transform
-    X *= self.scale_
-ValueError: non-broadcastable output operand with shape (150,1) doesn't match the broadcast shape (150,4)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/main.py", line 148, in main
+    mse, _ = lstm_model.evaluate(X_test_scaled, predictions_unscaled)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 55, in evaluate
+    predictions.append(prediction[0])
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 52, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_50925]
+2023-05-15 10:50:11,240 - INFO - Program started
+2023-05-15 10:50:14,685 - INFO - Selected ticker: BCH-USD
+2023-05-15 10:50:14,686 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 10:50:14,686 - INFO - Collecting crypto data from online resources...
+2023-05-15 10:50:14,686 - INFO - Retrieving historical data for BCH-USD
+2023-05-15 10:50:14,686 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 10:50:15,122 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 10:50:15,123 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 10:50:15,139 - INFO - Performing data analysis
+2023-05-15 10:50:15,145 - INFO - Collecting news articles from online resources...
+2023-05-15 10:50:15,667 - INFO - Performing sentiment analysis
+2023-05-15 10:50:15,668 - INFO - News sentiment score for BCH-USD is 0
+2023-05-15 10:50:18,016 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 10:50:18,020 - INFO - Scaling the data using the training data
+2023-05-15 10:51:25,910 - ERROR - An error occurred: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_120534]
+Traceback (most recent call last):
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/main.py", line 148, in main
+    mse, _ = lstm_model.evaluate(X_test_scaled, predictions_unscaled)
+  File "/home/skikk/Documenten/GitHub/CryptoSnake/machine_learning/models/lstm_model/lstm.py", line 54, in evaluate
+    prediction = self.model.predict(x, verbose=0)
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/skikk/micromamba/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 52, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Matrix size-incompatible: In[0]: [1,3], In[1]: [4,200]
+	 [[{{node while/body/_1/while/MatMul}}]]
+	 [[sequential/lstm/PartitionedCall]] [Op:__inference_predict_function_120534]
+2023-05-15 11:12:25,581 - INFO - Program started
+2023-05-15 11:12:34,177 - INFO - Selected ticker: BTC-USD
+2023-05-15 11:12:34,177 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 11:12:34,177 - INFO - Collecting crypto data from online resources...
+2023-05-15 11:12:34,177 - INFO - Retrieving historical data for BTC-USD
+2023-05-15 11:12:34,177 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 11:12:34,617 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 11:12:34,618 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 11:12:34,634 - INFO - Performing data analysis
+2023-05-15 11:12:34,640 - INFO - Collecting news articles from online resources...
+2023-05-15 11:12:35,360 - INFO - Performing sentiment analysis
+2023-05-15 11:12:35,434 - INFO - News sentiment score for BTC-USD is -0.05
+2023-05-15 11:12:38,785 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 11:12:38,795 - INFO - Scaling the data using the training data
+2023-05-15 11:22:26,450 - INFO - Program started
+2023-05-15 11:22:29,692 - INFO - Selected ticker: BTC-USD
+2023-05-15 11:22:29,692 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 11:22:29,692 - INFO - Collecting crypto data from online resources...
+2023-05-15 11:22:29,693 - INFO - Retrieving historical data for BTC-USD
+2023-05-15 11:22:29,693 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 11:22:29,972 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 11:22:29,974 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 11:22:29,991 - INFO - Performing data analysis
+2023-05-15 11:22:29,995 - INFO - Collecting news articles from online resources...
+2023-05-15 11:22:30,868 - INFO - Performing sentiment analysis
+2023-05-15 11:22:30,928 - INFO - News sentiment score for BTC-USD is -0.05
+2023-05-15 11:22:34,314 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 11:22:34,326 - INFO - Scaling the data using the training data
+2023-05-15 11:23:57,150 - INFO - Program started
+2023-05-15 11:24:00,240 - INFO - Selected ticker: WBTC-USD
+2023-05-15 11:24:00,240 - INFO - Selected ticker image URL: selected_ticker_image.png
+2023-05-15 11:24:00,240 - INFO - Collecting crypto data from online resources...
+2023-05-15 11:24:00,240 - INFO - Retrieving historical data for WBTC-USD
+2023-05-15 11:24:00,241 - INFO - Retrieved data for {config.selected_ticker}
+2023-05-15 11:24:00,608 - INFO - Retrieved historical data for {config.selected_ticker}
+2023-05-15 11:24:00,609 - INFO - Filtered data for {config.selected_ticker}
+2023-05-15 11:24:00,626 - INFO - Performing data analysis
+2023-05-15 11:24:00,632 - INFO - Collecting news articles from online resources...
+2023-05-15 11:24:01,126 - INFO - Performing sentiment analysis
+2023-05-15 11:24:01,126 - INFO - News sentiment score for WBTC-USD is 0
+2023-05-15 11:24:03,132 - INFO - Splitting the crypto data into features (X) and target (y)
+2023-05-15 11:24:03,144 - INFO - Scaling the data using the training data

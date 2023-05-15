@@ -19,11 +19,11 @@ class LSTMModel:
         X = np.array(X)
         Y = np.array(Y)
         self.model = Sequential()
-        self.model.add(LSTM(50, input_shape=(look_back, X.shape[2])))
+        self.model.add(LSTM(50, input_shape=(look_back, X.shape[2]), return_sequences=True))  # Added return_sequences=True
+        self.model.add(LSTM(50))  # Added another LSTM layer
         self.model.add(Dense(1))
         self.model.compile(loss='mean_squared_error', optimizer='adam')
-        self.model.fit(X, Y, epochs=30, batch_size=32, verbose=2)
-
+        self.model.fit(X, Y, epochs=500, batch_size=32, verbose=0, validation_split=0.2)  # Added validation_split for monitoring performance
 
     def predict(self, data, look_back=1):
         # function to predict the output using the trained LSTM model and the given data
@@ -32,14 +32,13 @@ class LSTMModel:
         for i in range(len(data)-look_back):
             x = data[i:i+look_back]
             x = x.reshape((1, look_back, data.shape[1]))
-            prediction = self.model.predict(x, verbose=2)
+            prediction = self.model.predict(x, verbose=0)
             predictions.append(prediction[0])
         return np.array(predictions)
 
-
     def evaluate(self, data, labels, look_back=1):
-    # function to evaluate the performance of the LSTM model on the given data and labels
-    # data and labels can be either pandas dataframes or numpy arrays, with each row representing a timestep and each column representing a feature
+        # function to evaluate the performance of the LSTM model on the given data and labels
+        # data and labels can be either pandas dataframes or numpy arrays, with each row representing a timestep and each column representing a feature
         if isinstance(data, pd.DataFrame):
             data_array = data[["Open", "High", "Low"]].values
         else:
@@ -52,8 +51,7 @@ class LSTMModel:
         for i in range(len(data_array)-look_back):
             x = data_array[i:i+look_back]
             x = x.reshape((1, look_back, data_array.shape[1]))
-            prediction = self.model.predict(x, verbose=2)
+            prediction = self.model.predict(x, verbose=0)
             predictions.append(prediction[0])
         mse = ((np.array(predictions) - labels_array[look_back:])**2).mean()
-        return mse
-
+        return mse, np.array(predictions)  # Returning both mse and predictions

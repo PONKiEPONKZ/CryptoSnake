@@ -16,20 +16,14 @@ class MLScaler:
         X_test_scaled = self.scaler.transform(X_test)
         return X_train_scaled, X_test_scaled
 
-    def unscale_data(self, predictions_scaled):
-        # Make sure predictions_scaled is a numpy array
-        if not isinstance(predictions_scaled, np.ndarray):
-            predictions_scaled = np.array(predictions_scaled)
-            
+    def unscale_data(self, X_test_scaled, predictions_scaled):
+        # Add three empty columns to predictions_scaled
+        predictions_scaled = np.column_stack([predictions_scaled, np.zeros((predictions_scaled.shape[0], 3))])
+        
         # Unscale the data
         predictions_unscaled = self.scaler.inverse_transform(predictions_scaled)
+                
+        # Remove the three empty columns from predictions_unscaled
+        #predictions_unscaled = predictions_unscaled[:, 0]
         
-        # Remove any negative values (if applicable)
-        if self.remove_negatives:
-            predictions_unscaled[predictions_unscaled < 0] = 0
-        
-        # Ensure that the output is the same shape as the input
-        if predictions_scaled.ndim == 1:
-            return predictions_unscaled.ravel()
-        else:
-            return predictions_unscaled
+        return predictions_unscaled
